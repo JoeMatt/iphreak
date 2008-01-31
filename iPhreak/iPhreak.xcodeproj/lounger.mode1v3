@@ -330,7 +330,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>30B469170D51A779006B6DF4</string>
+										<string>305450000D51AAD1009FC636</string>
 										<key>history</key>
 										<array>
 											<string>30C9CAF60D47DBE9000A54B0</string>
@@ -346,7 +346,7 @@
 											<string>30B4690F0D51A779006B6DF4</string>
 											<string>30B469100D51A779006B6DF4</string>
 											<string>30B469110D51A779006B6DF4</string>
-											<string>30401AD90D4D592F0013A607</string>
+											<string>30B469170D51A779006B6DF4</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -363,12 +363,6 @@
 											<string>304017130D4B02680013A607</string>
 											<string>30401AAB0D4C7DEE0013A607</string>
 											<string>30B468F70D51A344006B6DF4</string>
-											<string>30B468F80D51A344006B6DF4</string>
-											<string>30B468F90D51A344006B6DF4</string>
-											<string>30B468FA0D51A344006B6DF4</string>
-											<string>30B468FB0D51A344006B6DF4</string>
-											<string>30B469130D51A779006B6DF4</string>
-											<string>30B469140D51A779006B6DF4</string>
 											<string>30B469150D51A779006B6DF4</string>
 										</array>
 									</dict>
@@ -427,9 +421,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>30B468FD0D51A344006B6DF4</string>
+				<string>305450010D51AAD1009FC636</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>30B468FE0D51A344006B6DF4</string>
+				<string>305450020D51AAD1009FC636</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -563,7 +557,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>30C9C9BC0D45AF89000A54B0</string>
 		<string>/Users/lounger/iPhoneProjects/iPhreak/iPhreak.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
