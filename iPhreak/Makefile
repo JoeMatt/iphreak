@@ -7,27 +7,12 @@ SOURCES=\
 	KeyPad.m \
 	Key.m \
 	TonePlayer.h \
-	TonePlayer.m
+	TonePlayer.m \
+	Boxes.plist 
 	
 #IPHONE_IP=192.168.1.80
 
-WozBoxResources=\
-	0.png \
-	1.png \
-	2.png \
-	3.png \
-	4.png \
-	5.png \
-	6.png \
-	7.png \
-	8.png \
-	9.png \
-	*.png \
-	_.png \
-	clear.png \
-	blank.png
-WozBoxResources_ABS := $(addprefix $(SRCROOT)/GUI/WozBox/,$(WozBoxResources))
-WozBoxDir_ABS := $(SRCROOT)/GUI/WozBox/
+GuiDir_ABS := $(SRCROOT)/GUI/
 
 CC=/usr/local/bin/arm-apple-darwin-gcc
 CFLAGS=-g -O2 -Wall -I/usr/local/arm-apple-darwin/arm-apple-darwin/include/includes -I/usr/local/arm-apple-darwin/arm-apple-darwin/include/includes/UIKit/ -fsigned-char
@@ -64,8 +49,8 @@ $(APP_ABS): $(INFOPLIST_ABS)
 	cp $(DEFAULT_BACKGROUND_ABS) $(APP_ABS)/
 	cp $(APP_ICON_ABS) $(APP_ABS)/
 	#$(foreach RES,$(WozBoxResources_ABS),  $(RES) $(APP_ABS)/)
-	mkdir -p $(APP_ABS)/WozBox/
-	cp -R $(WozBoxDir_ABS)*.png $(APP_ABS)/WozBox/
+	#mkdir -p $(APP_ABS)/WozBox/
+	cp -R $(GuiDir_ABS)/* $(APP_ABS)/
 	cp $(SRCROOT)/Boxes.plist $(APP_ABS)
 	
 $(CONFIGURATION_TEMP_DIR)/%.o: $(SRCROOT)/%.m
