@@ -8,8 +8,6 @@
 		<string>Background.png</string>
 		<key>Cols</key>
 		<integer>4</integer>
-		<key>PauseDuration</key>
-		<integer>60</integer>
 		<key>Keys</key>
 		<dict>
 			<key>#</key>
@@ -25,9 +23,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>177</integer>
+				<integer>172</integer>
 				<key>Ypos</key>
-				<integer>389</integer>
+				<integer>384</integer>
 			</dict>
 			<key>*</key>
 			<dict>
@@ -42,9 +40,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>3</integer>
+				<integer>5</integer>
 				<key>Ypos</key>
-				<integer>390</integer>
+				<integer>388</integer>
 			</dict>
 			<key>0</key>
 			<dict>
@@ -76,9 +74,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>3</integer>
+				<integer>2</integer>
 				<key>Ypos</key>
-				<integer>140</integer>
+				<integer>141</integer>
 			</dict>
 			<key>2</key>
 			<dict>
@@ -93,7 +91,7 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>85</integer>
+				<integer>84</integer>
 				<key>Ypos</key>
 				<integer>140</integer>
 			</dict>
@@ -112,7 +110,7 @@
 				<key>Xpos</key>
 				<integer>165</integer>
 				<key>Ypos</key>
-				<integer>140</integer>
+				<integer>141</integer>
 			</dict>
 			<key>4</key>
 			<dict>
@@ -129,7 +127,7 @@
 				<key>Xpos</key>
 				<integer>3</integer>
 				<key>Ypos</key>
-				<integer>220</integer>
+				<integer>219</integer>
 			</dict>
 			<key>5</key>
 			<dict>
@@ -144,9 +142,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>85</integer>
+				<integer>84</integer>
 				<key>Ypos</key>
-				<integer>220</integer>
+				<integer>221</integer>
 			</dict>
 			<key>6</key>
 			<dict>
@@ -161,9 +159,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>170</integer>
+				<integer>167</integer>
 				<key>Ypos</key>
-				<integer>228</integer>
+				<integer>223</integer>
 			</dict>
 			<key>7</key>
 			<dict>
@@ -180,7 +178,7 @@
 				<key>Xpos</key>
 				<integer>3</integer>
 				<key>Ypos</key>
-				<integer>305</integer>
+				<integer>303</integer>
 			</dict>
 			<key>8</key>
 			<dict>
@@ -195,9 +193,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>85</integer>
+				<integer>88</integer>
 				<key>Ypos</key>
-				<integer>300</integer>
+				<integer>302</integer>
 			</dict>
 			<key>9</key>
 			<dict>
@@ -212,9 +210,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>173</integer>
+				<integer>171</integer>
 				<key>Ypos</key>
-				<integer>310</integer>
+				<integer>308</integer>
 			</dict>
 			<key>Blank1</key>
 			<dict>
@@ -229,9 +227,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>250</integer>
+				<integer>248</integer>
 				<key>Ypos</key>
-				<integer>220</integer>
+				<integer>221</integer>
 			</dict>
 			<key>Blank2</key>
 			<dict>
@@ -246,9 +244,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>250</integer>
+				<integer>249</integer>
 				<key>Ypos</key>
-				<integer>310</integer>
+				<integer>304</integer>
 			</dict>
 			<key>Clear</key>
 			<dict>
@@ -263,9 +261,9 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>250</integer>
+				<integer>248</integer>
 				<key>Ypos</key>
-				<integer>140</integer>
+				<integer>144</integer>
 			</dict>
 			<key>Send</key>
 			<dict>
@@ -280,13 +278,303 @@
 				<key>PressedImage</key>
 				<string>Blank.png</string>
 				<key>Xpos</key>
-				<integer>250</integer>
+				<integer>251</integer>
 				<key>Ypos</key>
 				<integer>385</integer>
 			</dict>
 		</dict>
 		<key>Name</key>
 		<string>WozBox</string>
+		<key>PauseDuration</key>
+		<integer>60</integer>
+		<key>Rows</key>
+		<integer>4</integer>
+	</dict>
+	<key>SilverBox</key>
+	<dict>
+		<key>Background</key>
+		<string>Background.png</string>
+		<key>Cols</key>
+		<integer>4</integer>
+		<key>Keys</key>
+		<dict>
+			<key>#</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>#.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>941</integer>
+				<key>Osc2</key>
+				<integer>1477</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>172</integer>
+				<key>Ypos</key>
+				<integer>384</integer>
+			</dict>
+			<key>*</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>_.png</string>
+				<key>Duration</key>
+				<integer>100</integer>
+				<key>Osc1</key>
+				<integer>941</integer>
+				<key>Osc2</key>
+				<integer>1209</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>5</integer>
+				<key>Ypos</key>
+				<integer>388</integer>
+			</dict>
+			<key>0</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>0.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>941</integer>
+				<key>Osc2</key>
+				<integer>1336</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>88</integer>
+				<key>Ypos</key>
+				<integer>383</integer>
+			</dict>
+			<key>1</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>1.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>697</integer>
+				<key>Osc2</key>
+				<integer>1209</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>2</integer>
+				<key>Ypos</key>
+				<integer>141</integer>
+			</dict>
+			<key>2</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>2.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>697</integer>
+				<key>Osc2</key>
+				<integer>1336</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>84</integer>
+				<key>Ypos</key>
+				<integer>140</integer>
+			</dict>
+			<key>3</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>3.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>697</integer>
+				<key>Osc2</key>
+				<integer>1477</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>165</integer>
+				<key>Ypos</key>
+				<integer>141</integer>
+			</dict>
+			<key>4</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>4.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>770</integer>
+				<key>Osc2</key>
+				<integer>1209</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>3</integer>
+				<key>Ypos</key>
+				<integer>219</integer>
+			</dict>
+			<key>5</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>5.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>770</integer>
+				<key>Osc2</key>
+				<integer>1336</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>84</integer>
+				<key>Ypos</key>
+				<integer>221</integer>
+			</dict>
+			<key>6</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>6.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>770</integer>
+				<key>Osc2</key>
+				<integer>1477</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>167</integer>
+				<key>Ypos</key>
+				<integer>223</integer>
+			</dict>
+			<key>7</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>7.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>852</integer>
+				<key>Osc2</key>
+				<integer>1209</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>3</integer>
+				<key>Ypos</key>
+				<integer>303</integer>
+			</dict>
+			<key>8</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>8.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>852</integer>
+				<key>Osc2</key>
+				<integer>1336</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>88</integer>
+				<key>Ypos</key>
+				<integer>302</integer>
+			</dict>
+			<key>9</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>9.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>852</integer>
+				<key>Osc2</key>
+				<integer>1477</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>171</integer>
+				<key>Ypos</key>
+				<integer>308</integer>
+			</dict>
+			<key>B</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>Blank.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>770</integer>
+				<key>Osc2</key>
+				<integer>1633</integer>
+				<key>PressedImage</key>
+				<string>B.png</string>
+				<key>Xpos</key>
+				<integer>248</integer>
+				<key>Ypos</key>
+				<integer>221</integer>
+			</dict>
+			<key>C</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>Blank.png</string>
+				<key>Duration</key>
+				<integer>100</integer>
+				<key>Osc1</key>
+				<integer>852</integer>
+				<key>Osc2</key>
+				<integer>1633</integer>
+				<key>PressedImage</key>
+				<string>C.png</string>
+				<key>Xpos</key>
+				<integer>249</integer>
+				<key>Ypos</key>
+				<integer>304</integer>
+			</dict>
+			<key>A</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>A.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>697</integer>
+				<key>Osc2</key>
+				<integer>1633</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>248</integer>
+				<key>Ypos</key>
+				<integer>144</integer>
+			</dict>
+			<key>D</key>
+			<dict>
+				<key>DefaultImage</key>
+				<string>D.png</string>
+				<key>Duration</key>
+				<integer>60</integer>
+				<key>Osc1</key>
+				<integer>941</integer>
+				<key>Osc2</key>
+				<integer>1633</integer>
+				<key>PressedImage</key>
+				<string>Blank.png</string>
+				<key>Xpos</key>
+				<integer>251</integer>
+				<key>Ypos</key>
+				<integer>385</integer>
+			</dict>
+		</dict>
+		<key>Name</key>
+		<string>SilverBox</string>
+		<key>PauseDuration</key>
+		<integer>60</integer>
 		<key>Rows</key>
 		<integer>4</integer>
 	</dict>
