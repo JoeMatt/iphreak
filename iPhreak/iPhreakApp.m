@@ -108,6 +108,24 @@ extern NSString *kUIButtonBarButtonType;
 	[mainWindow makeKey: self];
 	[mainWindow _setHidden: NO];
 	[buttonBarView release];
+	
+	// Allert sheet displayed at centre of screen.
+	NSArray *buttons = [NSArray arrayWithObjects:@"I swear to be good", @"Whatever, I'll do what I want", nil];
+	UIAlertSheet *alertSheet = [[UIAlertSheet alloc] initWithTitle:@"Warning" buttons:buttons defaultButtonIndex:1 delegate:self context:self];
+	[alertSheet setDelegate:self];
+	[alertSheet setRunsModal: true];
+	[alertSheet setBodyText:@"Be careful. Don't use for anything illegal. Avoid playing anything other than Silver Box tones into a phone receiver!"];
+	[alertSheet popupAlertAnimated:YES];
+}
+
+- (void)alertSheet:(UIAlertSheet*)sheet buttonClicked:(int)button
+{
+	if ( button == 1 )
+		;
+	else if ( button == 2 )
+	{ [self terminateWithSuccess]; }
+	
+	[sheet dismiss];
 }
 
 -(Tone*)getToneByIndex:(int) index

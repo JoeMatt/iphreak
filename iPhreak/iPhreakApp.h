@@ -21,5 +21,6 @@
 -(void)readSettings;
 -(Tone*)getToneByIndex:(int) index;
 -(TonePlayer*)player;
+- (void)alertSheet:(UIAlertSheet*)sheet buttonClicked:(int)button;
 
 @end
