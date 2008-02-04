@@ -9,13 +9,16 @@
 #import <GraphicsServices/GraphicsServices.h>
 #import <LayerKit/LayerKit.h>
 #import <UIKit/UIKit.h>
-#import "Key.h" 
+
+@class Key;
 
 @interface KeyPad : NSObject {
 	UIImage * background;
-	unsigned numRows, numCols, numKeys;
+	unsigned numRows, 
+			 numCols, 
+			 numKeys;
+	
 	Key * keys[16];
-	//NSArray* buttonLocations;
 	NSDictionary* myDictionary;
 	UIImageView * view;
 	NSString * myName;

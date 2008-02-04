@@ -2,13 +2,19 @@
 #import <GraphicsServices/GraphicsServices.h>
 #import <LayerKit/LayerKit.h>
 #import <UIKit/UIKit.h>
-#import "TonePlayer.h"
+
+@class TonePlayer;
+@class Tone;
+@class ButtonBarView;
 
 @interface iPhreakApp : UIApplication {
 	UIWindow *mainWindow;
+	UIView  *mainView;
 	NSDictionary * boxData;
 	TonePlayer * player;
 	NSArray *tones;
+	
+	ButtonBarView * buttonBarView;
 }
 
 -(UIWindow*)getMainWindow;

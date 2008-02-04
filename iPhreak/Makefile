@@ -8,6 +8,8 @@ SOURCES=\
 	Key.m \
 	TonePlayer.h \
 	TonePlayer.m \
+	ButtonBarView.h \
+	ButtonBarView.m \
 	Boxes.plist 
 	
 #IPHONE_IP=192.168.1.80
@@ -17,7 +19,18 @@ GuiDir_ABS := $(SRCROOT)/GUI/
 CC=/usr/local/bin/arm-apple-darwin-gcc
 CFLAGS=-g -O2 -Wall -I/usr/local/arm-apple-darwin/arm-apple-darwin/include/includes -I/usr/local/arm-apple-darwin/arm-apple-darwin/include/includes/UIKit/ -fsigned-char
 LD=$(CC)
-LDFLAGS=-I/usr/local/arm-apple-darwin/include -lobjc -ObjC -framework CoreFoundation -framework Foundation -framework CoreGraphics -framework GraphicsServices -framework UIKit -framework LayerKit -framework Celestial -framework CoreAudio -framework AudioToolbox
+LDFLAGS = -I/usr/local/arm-apple-darwin/include -lobjc -ObjC \
+			-framework CoreFoundation \
+			-framework Foundation \
+			-framework CoreGraphics \
+			-framework GraphicsServices \
+			-framework UIKit \
+			-framework LayerKit \
+			-framework Celestial \
+			-framework CoreAudio \
+			-framework AudioToolbox \
+			-framework CoreSurface
+			
 #LDFLAGS=-Wl -I/usr/local/arm-apple-darwin/include -lobjc -ObjC -framework CoreFoundation -framework Foundation -framework UIKit -framework CoreGraphics -framework GraphicsServices -framework Celestial -framework CoreAudio -framework AudioToolbox
 
 WRAPPER_NAME=$(PRODUCT_NAME).app

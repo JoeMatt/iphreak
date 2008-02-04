@@ -188,6 +188,7 @@ static void AQBufferCallback( void *in, AudioQueueRef inQ, AudioQueueBufferRef o
 	//AudioQueuePrime( queue, 0, NULL);
 	UInt32 err = AudioQueueStart( queue, NULL );
 	if( err ) printf( "AudioQueueStart error\n" );
+	NSLog(@"PLAYING");
 }
 
 -(void)stop

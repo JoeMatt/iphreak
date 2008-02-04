@@ -8,9 +8,13 @@
 
 /* Begin PBXFileReference section */
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3022137B0D552FC200918800 /* AudioQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioQueue.h; sourceTree = "<group>"; };
+		303C708A0D55362E000B36A9 /* ButtonBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonBarView.m; sourceTree = "<group>"; };
+		303C708B0D55362E000B36A9 /* ButtonBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonBarView.h; sourceTree = "<group>"; };
 		304016EA0D4AFFD60013A607 /* TonePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonePlayer.h; sourceTree = "<group>"; };
 		304016EB0D4AFFD60013A607 /* TonePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonePlayer.m; sourceTree = "<group>"; };
 		304017BF0D4B0A750013A607 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		3054502A0D521269009FC636 /* WebFontCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebFontCache.h; sourceTree = "<group>"; };
 		30C9C9AA0D458A4F000A54B0 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 		30C9C9AB0D458A4F000A54B0 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Key.m; sourceTree = "<group>"; };
 		30C9C9AC0D458A5B000A54B0 /* KeyPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPad.h; sourceTree = "<group>"; };
@@ -82,8 +86,12 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D9C1849B0C6B467300A7383F /* iPhreak_Prefix.pch */,
+				303C708B0D55362E000B36A9 /* ButtonBarView.h */,
+				303C708A0D55362E000B36A9 /* ButtonBarView.m */,
+				3022137B0D552FC200918800 /* AudioQueue.h */,
+				3054502A0D521269009FC636 /* WebFontCache.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				D9C1849B0C6B467300A7383F /* iPhreak_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";

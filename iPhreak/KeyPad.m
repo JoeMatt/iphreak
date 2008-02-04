@@ -7,12 +7,10 @@
 //
 
 #import "KeyPad.h"
+#import "Key.h" 
 #import "iPhreakApp.h"
-#import <TelephonyUI/TPLCDSubImageView.h>
-#import <TelephonyUI/TPLCDTextView.h>
-#import <TelephonyUI/TPLCDTextViewScrollingView.h>
-#import <TelephonyUI/TPLCDView.h>
- 
+#import "TonePlayer.h" 
+
 @implementation KeyPad
 
 -(id)initWithDictionary:(NSDictionary*) aDict parent:(id)sender;
@@ -25,7 +23,10 @@
 	activeTimer = nil;
 	
 	background = [UIImage applicationImageNamed:[NSString stringWithFormat:@"%@/%@",myName,[myDictionary valueForKey:@"Background"]]];
-	view = [[UIImageView alloc] initWithImage: background];
+	//view = [[UIImageView alloc] initWithImage: background];
+	view = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,320,460)];
+	[view setImage:background];
+	
 	[self makeView: self];
 	
 	return self; 
@@ -38,46 +39,16 @@
 -(void)makeView: (id) sender
 { 
 	
-	UIImage* btnImage = [UIImage applicationImageNamed:@"1.png"];
-	UIImage* btnImage2 = [UIImage applicationImageNamed:@"2.png"];
+	/*For each Key in Keys, make key
+	 *-(id)initWithFirstFrequency: (int) aFreq secondFrequency: (int) anotherFreq defaultImage: (UIImage*) aImage pressedImage: (UIImage*) anotherImage;
+	 * //key names, DefaultImage, Osc1, Osc2, PressedImage, Xpos, Ypos
+	 */
 	
-	UIImage* blankImage = [UIImage applicationImageNamed:@"blank.png"];
-	
-	
-	UIPushButton * pushButton = [[UIPushButton alloc] init];
-	[pushButton setFrame: CGRectMake(100.0, 130.0, 100.0, 50.0)];
-	[pushButton setDrawsShadow: YES];
-	[pushButton setEnabled:YES];  //may not be needed	
-	[pushButton setStretchBackground:YES];
-	[pushButton setOrigin: CGPointMake(3,140)];
-	
-	[pushButton setImage:btnImage forState:0];  //up state
-	[pushButton setImage:blankImage forState:1]; //down state	
-	
-	[view addSubview: pushButton];
-	
-	pushButton = [[UIPushButton alloc] init];
-	
-	[pushButton setFrame: CGRectMake(100.0, 130.0, 100.0, 50.0)];
-	[pushButton setDrawsShadow: YES];
-	[pushButton setEnabled:YES];  //may not be needed
-	[pushButton setStretchBackground:YES];
-	[pushButton setOrigin: CGPointMake(85,140)];
-	
-	[pushButton setImage:btnImage2 forState:0];  //up state
-	[pushButton setImage:blankImage forState:1]; //down state	
-	
-	[view addSubview: pushButton];
-	
-	//For each Key in Keys, make key
-	//-(id)initWithFirstFrequency: (int) aFreq secondFrequency: (int) anotherFreq defaultImage: (UIImage*) aImage pressedImage: (UIImage*) anotherImage;
-	
-	//key names, DefaultImage, Osc1, Osc2, PressedImage, Xpos, Ypos
 	NSDictionary * keysDict = [myDictionary objectForKey:@"Keys"];
 	NSEnumerator *enumerator = [keysDict objectEnumerator];
 	NSDictionary * key;
+	UIPushButton * pushButton;
 	int x=0;
-	//UIPushButton * pushButton;
 	
 	while ((key = [enumerator nextObject])) {
 		NSNumber*         aNSNumber;
@@ -85,7 +56,6 @@
 		
 		aNSNumber = [key valueForKey:@"Osc1"];
 		osc1 = [aNSNumber unsignedIntValue];
-		
 		
 		aNSNumber = [key valueForKey:@"Osc2"];
 		osc2 = [aNSNumber unsignedIntValue];
@@ -154,11 +124,11 @@
 	iPhreakApp * app = (iPhreakApp*) parent;
 	
 	NSLog(@"Button %i %i pressed",[key freq1], [key freq2] );
-	NSTimeInterval interval = 0.06;
+	NSTimeInterval interval = .16;
 	
 	[[app getToneByIndex:0] setFrequency:[key freq1]];
 	[[app getToneByIndex:1] setFrequency:[key freq2]];
-	[[app player] play];
+//	[[app player] play];
 
 	if( activeTimer != nil && [activeTimer isValid] == YES )
 	{
@@ -168,6 +138,7 @@
 	}
 	
 	activeTimer = [[NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(resetTones:) userInfo:self repeats:NO] retain]; //if you don't retain, isValid will segfault above
+
 }
 
 -(void)resetTones:(NSTimer*)theTimer

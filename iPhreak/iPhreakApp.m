@@ -6,12 +6,16 @@
 #import <UIKit/UIView-Animation.h>
 #import <UIKit/UISliderControl.h>
 
+#import "ButtonBarView.h"
+
+/*
 #import <TelephonyUI/TPLCDSubImageView.h>
 #import <TelephonyUI/TPLCDTextView.h>
 #import <TelephonyUI/TPLCDTextViewScrollingView.h>
 #import <TelephonyUI/TPLCDView.h>
 #import <TelephonyUI/TelephonyUI.h>
-
+ */
+/*
 extern NSString *kUIButtonBarButtonAction;
 extern NSString *kUIButtonBarButtonInfo;
 extern NSString *kUIButtonBarButtonInfoOffset;
@@ -23,51 +27,41 @@ extern NSString *kUIButtonBarButtonTitle;
 extern NSString *kUIButtonBarButtonTitleVerticalHeight;
 extern NSString *kUIButtonBarButtonTitleWidth;
 extern NSString *kUIButtonBarButtonType;
-
+*/
 @implementation iPhreakApp
  
 - (void)applicationDidFinishLaunching:(GSEventRef)event;
 {  
-    mainWindow = [[UIWindow alloc] initWithContentRect:[UIHardware fullScreenApplicationContentRect]];
-    [mainWindow setContentView:[[[UIView alloc] initWithFrame:[mainWindow bounds]] autorelease]];
     
+	/* Setup Window */
+	// init main window for the application to be the whole screen.
+	//struct CGRect frame = [UIHardware fullScreenApplicationContentRect];
+	//frame.origin.x = frame.origin.y = 0.0f;
+	//mainWindow = [[UIWindow alloc] initWithContentRect: frame];
+
+	mainWindow = [[UIWindow alloc] initWithContentRect:[UIHardware fullScreenApplicationContentRect]];
+    [mainWindow setContentView:[[[UIView alloc] initWithFrame:[mainWindow bounds]] autorelease]];
+	mainView = [[[UIView alloc] initWithFrame:[mainWindow bounds]] autorelease];
+	[mainWindow setContentView:mainView];
+				
 	[self readSettings];
-	
-	KeyPad * wozBox = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"WozBox"] parent:self];
-	KeyPad * silverBox = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
-	
+
+	/* Setup Oscilators */
 	player = [[TonePlayer alloc] init];
 	
 	tones = [[NSArray arrayWithObjects:
 			  [player addTone: [Tone toneWithFrequency: 0]],
 			  [player addTone: [Tone toneWithFrequency: 0]],
 			  nil] retain];
+	[player play];
 	
-	UITextView * lcd = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320.0, 80.0)];
-	[lcd setTextSize:18.0];
-	[[wozBox getView] addSubview:lcd];
-
-	NSDictionary *buttonPreferences = [NSDictionary dictionaryWithObjectsAndKeys:
-								 self, kUIButtonBarButtonTarget,
-								 @"clearDrawing", kUIButtonBarButtonAction,
-								 [NSNumber numberWithUnsignedInt:1], kUIButtonBarButtonTag,
-								 [NSNumber numberWithUnsignedInt:3], kUIButtonBarButtonStyle,
-								 [NSNumber numberWithUnsignedInt:1], kUIButtonBarButtonType,
-								 [NSNumber numberWithUnsignedInt:75], kUIButtonBarButtonTitleWidth,
-								 @"Preferences", kUIButtonBarButtonInfo,
-								 nil
-								 ];
-
-	NSArray *items = [NSArray arrayWithObjects:buttonPreferences, nil];
-	
-	UIButtonBar *bar = [[[UIButtonBar alloc] initInView: [wozBox getView] withItemList: items] autorelease];
-	float height = [UIButtonBar defaultHeight];
-	[bar setOrigin: CGPointMake(0,0)];//[mainWindow bounds].size.height-height)];
-	int buttons[3] = { 1, 2, 3 };
-	[bar showButtons: buttons withCount: 3 withDuration: 0];
-	
-
-	/* Experimenting with varioius LCD views. All of which Bus Error on definition */
+	/* Create Boxes */
+	KeyPad * wozBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"WozBox"] parent:self];
+	KeyPad * silverBox = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
+//	KeyPad * redBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
+//	KeyPad * greenBox  = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
+  	
+	// Experimenting with varioius LCD views. All of which Bus Error on definition 
 	//	TPLCDViews, i don't understand them. they just crash on decleration
 	//	TPLCDSubImageView* lcd = [[[TPLCDSubImageView alloc] initWithDefaultSize] retain];
 	//	[mainWindow setContentView:lcd];
@@ -81,11 +75,39 @@ extern NSString *kUIButtonBarButtonType;
 	//	TPLCDView * lcd4 = [[TPLCDView alloc] initWithDefaultSize];
 	//	[mainWindow setContentView:lcd4];
 	//	[[wozBox getView] addSubview:lcd4];
+
+	/* Setup Views */
+	[super setStatusBarMode:3 duration:0];
+
+	UIView * preferencesView = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
+	UITextView * lcd = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 130)];	
+	buttonBarView = [[ButtonBarView alloc] initWithFrame:CGRectMake(0,0,320,460) andView:[wozBox getView]];
 	
-	[mainWindow setContentView:[wozBox getView]];
+				/* TEMP */
+	float red[4] = {1, 0, 0, 1};
+	float green[4] = {0, 1, 0, 1};
+	float white[4] = {1, 1, 1, 1};
+	UIView * redBoxFiller = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
+	UIView * greenBoxFiller = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
+	[redBoxFiller setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), red)];
+    [greenBoxFiller setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), green)];
+    [preferencesView setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), white)];
+				/* END TEMP */
 	
-	[mainWindow orderFront:self];
-    [mainWindow makeKey:self];
+	[lcd setTextSize:18.0];
+	
+	[buttonBarView addView:[silverBox getView]];
+	[buttonBarView addView:redBoxFiller];
+	[buttonBarView addView:greenBoxFiller];
+	[buttonBarView addView:preferencesView];
+
+	[mainView addSubview:lcd]; 
+	[mainView addSubview:buttonBarView];
+	
+	[mainWindow orderFront: self];
+	[mainWindow makeKey: self];
+	[mainWindow _setHidden: NO];
+	[buttonBarView release];
 }
 
 -(Tone*)getToneByIndex:(int) index
