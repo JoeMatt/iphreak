@@ -80,12 +80,6 @@
 - (UITransitionView *)createBarTransitionView;
 -(void)testAnimation;
 
-#define CB_1 0x00
-#define CB_2 0x01
-#define CB_3 0x02
-#define CB_4 0x03
-#define CB_5 0x04
-
 extern NSString *kUIButtonBarButtonAction;
 extern NSString *kUIButtonBarButtonInfo;
 extern NSString *kUIButtonBarButtonInfoOffset;

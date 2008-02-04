@@ -8,9 +8,6 @@
 
 #import "ButtonBarView.h"
 
-/*
- * ButtonBarView
- */
 @implementation ButtonBarView
 
 -(id)initWithFrame:(CGRect)frame andView: (UIView *) aView
@@ -24,26 +21,7 @@
 	_onScreenRect = frame;
 	_onScreenRect.origin.x = 0.0f;
 	rect.origin.x = rect.origin.y = 0.0f;
-	
-// Create some colors
-	/* float cyan[4] = {0, 0.6823, 0.9372, 1};
-	 float yellow[4] = {1, 0.9490, 0, 1};
-	 float magenta[4] = {0.9254, 0, 0.5490, 1};
-	 float orange[4] = {1.0, 0.6588, 0, 1};
-	 float white[4] = {1, 1, 1, 1};
-	*/
-// Create your views
-/*	testview1 = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
-	testview2 = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
-	testview3 = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
-	testview4 = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
-	testview5 = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
-    [testview1 setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), cyan)];
-	[testview2 setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), yellow)];
-    [testview3 setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), magenta)];
-    [testview4 setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), orange)];
-    [testview5 setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), white)];
-*/	
+		
 	subviews = [[NSMutableArray alloc] init];
 	[self addView:aView];
 
@@ -57,9 +35,7 @@
 	[ self addSubview: _barTransitionView ];
 	
 	[ _transitionView transition:6 toView:[subviews objectAtIndex:0]];
-	[ _barTransitionView transition:6 toView:_buttonBar ];			
-	
-		
+	[ _barTransitionView transition:6 toView:_buttonBar ];
  
 	}
 	return self;
@@ -167,49 +143,7 @@
 
 - (void)buttonBarItemTapped:(id) sender {
     int button = [ sender tag ] - 1;
-   /* switch (button) {
-        case 1:
-		if (currentView == CB_1) { }
-		else {
-			[self testAnimation];
-            [ _transitionView transition:0 toView:testview1 ];
-		    currentView = CB_1;
-			}
-            break;
-        case 2:
-		if (currentView == CB_2) { }
-		else {
-			[self testAnimation];
-			[ _transitionView transition:0 toView:testview2 ];
-		    currentView = CB_2;
-			}
-             break;
-        case 3:
-		if (currentView ==CB_3) { }
-		else {
-			 [self testAnimation];
-			 [ _transitionView transition:0 toView:testview3 ];
-		    currentView = CB_3;
-			}
-             break;
-        case 4:
-		if (currentView == CB_4) { }
-		else {
-			[self testAnimation];
-			 [ _transitionView transition:0 toView:testview4 ];
-		    currentView = CB_4;
-			}
-             break;
-		case 5:
-		if (currentView == CB_5) { }
-		else {
-			[self testAnimation];
-            [ _transitionView transition:0 toView:testview5 ];
-		    currentView = CB_5;
-			}
-             break;
-    }
-	*/
+
 	if (currentView != button)
 	{
 		[self testAnimation];
@@ -219,13 +153,11 @@
     
 }
 
-
 - (void)reloadButtonBar {
     [ _buttonBar removeFromSuperview ];
     [ _buttonBar release ];
     _buttonBar = [ self createButtonBar ];
 }
-
 		 		 		 		
 // Gets a mouse down event in the rect, but you can use it to catch mouse event in any rect you want
 - (void)mouseDown:(GSEvent *)event {
