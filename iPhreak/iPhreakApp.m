@@ -58,7 +58,7 @@ extern NSString *kUIButtonBarButtonType;
 	/* Create Boxes */
 	KeyPad * wozBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"WozBox"] parent:self];
 	KeyPad * silverBox = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
-//	KeyPad * redBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
+	KeyPad * redBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"RedBox"] parent:self];
 //	KeyPad * greenBox  = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
   	
 	// Experimenting with varioius LCD views. All of which Bus Error on definition 
@@ -85,19 +85,22 @@ extern NSString *kUIButtonBarButtonType;
 	
 				/* TEMP */
 	float red[4] = {1, 0, 0, 1};
+	float darkred[4] = {.3, .08, .08, 1};
 	float green[4] = {0, 1, 0, 1};
 	float white[4] = {1, 1, 1, 1};
-	UIView * redBoxFiller = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
+	float black[4] = {0, 0, 0, 1}; 
+//	UIView * redBoxFiller = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
 	UIView * greenBoxFiller = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
-	[redBoxFiller setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), red)];
+//	[redBoxFiller setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), red)];
     [greenBoxFiller setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), green)];
     [preferencesView setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), white)];
-				/* END TEMP */
+	[[redBox getView] setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), darkred)];
+	/* END TEMP */
 	
 	[lcd setTextSize:18.0];
 	
 	[buttonBarView addView:[silverBox getView]];
-	[buttonBarView addView:redBoxFiller];
+	[buttonBarView addView:[redBox getView]];
 	[buttonBarView addView:greenBoxFiller];
 	[buttonBarView addView:preferencesView];
 
