@@ -169,11 +169,12 @@ NSLog(@"%s", _cmd);
 	[ _barTransitionView transition:3 fromView:blankView toView:_buttonBar];
 	barStatus = 1;
 	}
-	else {
+		//TODO : Temporary uncomenting to disable auto-hide. Will later add options for auto-hiding
+/*	else {
 	[ _barTransitionView transition:5 fromView:_buttonBar toView:blankView ];
 		barStatus = 0;
-	}
-	}
+	} */
+	} 
 }
 
 
