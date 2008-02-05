@@ -161,7 +161,7 @@
 		 		 		 		
 // Gets a mouse down event in the rect, but you can use it to catch mouse event in any rect you want
 - (void)mouseDown:(GSEvent *)event {
-NSLog(@"%s", _cmd);
+//NSLog(@"%s", _cmd);
     
 	CGPoint point = GSEventGetLocationInWindow(event);
 	if (CGRectContainsPoint(rect, point)) {
