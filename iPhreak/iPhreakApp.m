@@ -38,7 +38,8 @@ extern NSString *kUIButtonBarButtonType;
 	//struct CGRect frame = [UIHardware fullScreenApplicationContentRect];
 	//frame.origin.x = frame.origin.y = 0.0f;
 	//mainWindow = [[UIWindow alloc] initWithContentRect: frame];
-
+	[super setStatusBarMode:3 duration:1];
+	
 	mainWindow = [[UIWindow alloc] initWithContentRect:[UIHardware fullScreenApplicationContentRect]];
     [mainWindow setContentView:[[[UIView alloc] initWithFrame:[mainWindow bounds]] autorelease]];
 	mainView = [[[UIView alloc] initWithFrame:[mainWindow bounds]] autorelease];
@@ -59,7 +60,7 @@ extern NSString *kUIButtonBarButtonType;
 	KeyPad * wozBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"WozBox"] parent:self];
 	KeyPad * silverBox = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
 	KeyPad * redBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"RedBox"] parent:self];
-//	KeyPad * greenBox  = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
+	KeyPad * greenBox  = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"GreenBox"] parent:self];
   	
 	// Experimenting with varioius LCD views. All of which Bus Error on definition 
 	//	TPLCDViews, i don't understand them. they just crash on decleration
@@ -77,31 +78,28 @@ extern NSString *kUIButtonBarButtonType;
 	//	[[wozBox getView] addSubview:lcd4];
 
 	/* Setup Views */
-	[super setStatusBarMode:3 duration:0];
-
 	UIView * preferencesView = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
 	UITextView * lcd = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 130)];	
 	buttonBarView = [[ButtonBarView alloc] initWithFrame:CGRectMake(0,0,320,460) andView:[wozBox getView]];
 	
 				/* TEMP */
-	float red[4] = {1, 0, 0, 1};
+	//float red[4] = {1, 0, 0, 1};
 	float darkred[4] = {.3, .08, .08, 1};
-	float green[4] = {0, 1, 0, 1};
+	//float green[4] = {0, 1, 0, 1};
+	float darkgreen[4] = {.08, .3, .08, 1};
 	float white[4] = {1, 1, 1, 1};
-	float black[4] = {0, 0, 0, 1}; 
-//	UIView * redBoxFiller = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
-	UIView * greenBoxFiller = [ [ UIView alloc ] initWithFrame:CGRectMake(0,0,320,460)];
-//	[redBoxFiller setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), red)];
-    [greenBoxFiller setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), green)];
+	//float black[4] = {0, 0, 0, 1}; 
+
     [preferencesView setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), white)];
 	[[redBox getView] setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), darkred)];
+	[[greenBox getView] setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), darkgreen)];
 	/* END TEMP */
 	
 	[lcd setTextSize:18.0];
 	
 	[buttonBarView addView:[silverBox getView]];
 	[buttonBarView addView:[redBox getView]];
-	[buttonBarView addView:greenBoxFiller];
+	[buttonBarView addView:[greenBox getView]];
 	[buttonBarView addView:preferencesView];
 
 	[mainView addSubview:lcd]; 
