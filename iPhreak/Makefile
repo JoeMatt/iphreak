@@ -31,8 +31,6 @@ LDFLAGS = -I/usr/local/arm-apple-darwin/include -lobjc -ObjC \
 			-framework AudioToolbox \
 			-framework CoreSurface
 			
-#LDFLAGS=-Wl -I/usr/local/arm-apple-darwin/include -lobjc -ObjC -framework CoreFoundation -framework Foundation -framework UIKit -framework CoreGraphics -framework GraphicsServices -framework Celestial -framework CoreAudio -framework AudioToolbox
-
 WRAPPER_NAME=$(PRODUCT_NAME).app
 EXECUTABLE_NAME=$(PRODUCT_NAME)
 SOURCES_ABS=$(addprefix $(SRCROOT)/,$(SOURCES))
@@ -61,8 +59,6 @@ $(APP_ABS): $(INFOPLIST_ABS)
 	cp $(INFOPLIST_ABS) $(APP_ABS)/
 	cp $(DEFAULT_BACKGROUND_ABS) $(APP_ABS)/
 	cp $(APP_ICON_ABS) $(APP_ABS)/
-	#$(foreach RES,$(WozBoxResources_ABS),  $(RES) $(APP_ABS)/)
-	#mkdir -p $(APP_ABS)/WozBox/
 	cp -R $(GuiDir_ABS)/* $(APP_ABS)/
 	cp $(SRCROOT)/Boxes.plist $(APP_ABS)
 	
