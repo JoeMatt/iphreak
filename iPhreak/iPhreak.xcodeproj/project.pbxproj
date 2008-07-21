@@ -6,6 +6,161 @@
 	objectVersion = 42;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		30BCCE980DA6778F00680BF3 /* TonePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 304016EB0D4AFFD60013A607 /* TonePlayer.m */; };
+		30BCCE990DA6778F00680BF3 /* Key.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9AB0D458A4F000A54B0 /* Key.m */; };
+		30BCCE9A0DA6778F00680BF3 /* KeyPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9AD0D458A5B000A54B0 /* KeyPad.m */; };
+		30BCCE9B0DA6778F00680BF3 /* iPhreakApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F56B90C6719EF007AE76B /* iPhreakApp.m */; };
+		30BCCE9C0DA6778F00680BF3 /* ButtonBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 303C708A0D55362E000B36A9 /* ButtonBarView.m */; };
+		30BCCE9D0DA6778F00680BF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		30BCCEA20DA677A800680BF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEA10DA677A800680BF3 /* Foundation.framework */; };
+		30BCCEA40DA677AF00680BF3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEA30DA677AF00680BF3 /* CoreGraphics.framework */; };
+		30BCCEA60DA677BE00680BF3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEA50DA677BE00680BF3 /* UIKit.framework */; };
+		30BCCED30DA6789900680BF3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCED20DA6789900680BF3 /* CoreAudio.framework */; };
+		30BCCEEC0DA678FE00680BF3 /* LayerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEEB0DA678FE00680BF3 /* LayerKit.framework */; };
+		30BCCEEF0DA6793F00680BF3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304017BF0D4B0A750013A607 /* AudioToolbox.framework */; };
+		30BCCEFB0DA6796D00680BF3 /* Celestial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEFA0DA6796D00680BF3 /* Celestial.framework */; };
+		30BCCEFE0DA6799B00680BF3 /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEFD0DA6799B00680BF3 /* GraphicsServices.framework */; };
+		30BCCF040DA679D300680BF3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C9C9EA0D45B9C1000A54B0 /* Default.png */; };
+		30BCCF050DA679DB00680BF3 /* Boxes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3020DBF70D583B190062EA14 /* Boxes.plist */; };
+		30BCCF520DA67AA600680BF3 /* #.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC280D5846450062EA14 /* #.png */; };
+		30BCCF530DA67AA600680BF3 /* 0.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC290D5846450062EA14 /* 0.png */; };
+		30BCCF540DA67AA600680BF3 /* 1.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC2A0D5846450062EA14 /* 1.png */; };
+		30BCCF550DA67AA600680BF3 /* 2.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC2B0D5846450062EA14 /* 2.png */; };
+		30BCCF560DA67AA600680BF3 /* 3.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC2C0D5846450062EA14 /* 3.png */; };
+		30BCCF570DA67AA600680BF3 /* 4.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC2D0D5846450062EA14 /* 4.png */; };
+		30BCCF580DA67AA600680BF3 /* 5.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC2E0D5846450062EA14 /* 5.png */; };
+		30BCCF590DA67AA600680BF3 /* 6.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC2F0D5846450062EA14 /* 6.png */; };
+		30BCCF5A0DA67AA600680BF3 /* 7.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC300D5846450062EA14 /* 7.png */; };
+		30BCCF5B0DA67AA600680BF3 /* 8.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC310D5846450062EA14 /* 8.png */; };
+		30BCCF5C0DA67AA600680BF3 /* 9.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC320D5846450062EA14 /* 9.png */; };
+		30BCCF5D0DA67AA600680BF3 /* _.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC330D5846450062EA14 /* _.png */; };
+		30BCCF5E0DA67AA600680BF3 /* Background.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC340D5846450062EA14 /* Background.png */; };
+		30BCCF5F0DA67AA600680BF3 /* Blank.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC350D5846450062EA14 /* Blank.png */; };
+		30BCCF600DA67AA600680BF3 /* Clear.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC360D5846450062EA14 /* Clear.png */; };
+		30BCCF610DA67AA600680BF3 /* Send.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC370D5846450062EA14 /* Send.png */; };
+		30BCCF630DA67ADC00680BF3 /* Background.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D190D59012000A47AA0 /* Background.png */; };
+		30BCCF640DA67ADC00680BF3 /* CoinCollect.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D1A0D59012000A47AA0 /* CoinCollect.png */; };
+		30BCCF650DA67ADC00680BF3 /* CoinCollect_Down.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D1B0D59012000A47AA0 /* CoinCollect_Down.png */; };
+		30BCCF660DA67ADC00680BF3 /* CoinReturn.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D1C0D59012000A47AA0 /* CoinReturn.png */; };
+		30BCCF670DA67ADC00680BF3 /* CoinReturn_Down.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D1D0D59012000A47AA0 /* CoinReturn_Down.png */; };
+		30BCCF680DA67ADC00680BF3 /* MF8.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D1E0D59012000A47AA0 /* MF8.png */; };
+		30BCCF690DA67ADC00680BF3 /* MF8_Down.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D1F0D59012000A47AA0 /* MF8_Down.png */; };
+		30BCCF6A0DA67ADC00680BF3 /* RingBack.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D200D59012000A47AA0 /* RingBack.png */; };
+		30BCCF6B0DA67ADC00680BF3 /* RingBack_Down.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D210D59012000A47AA0 /* RingBack_Down.png */; };
+		30BCCF6C0DA67ADC00680BF3 /* Wink.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D220D59012000A47AA0 /* Wink.png */; };
+		30BCCF6D0DA67ADC00680BF3 /* Wink_Down.png in Copy Green Files */ = {isa = PBXBuildFile; fileRef = 30D48D230D59012000A47AA0 /* Wink_Down.png */; };
+		30BCCF700DA67B1C00680BF3 /* #.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC150D5846450062EA14 /* #.png */; };
+		30BCCF710DA67B1C00680BF3 /* 0.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC160D5846450062EA14 /* 0.png */; };
+		30BCCF720DA67B1C00680BF3 /* 1.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC170D5846450062EA14 /* 1.png */; };
+		30BCCF730DA67B1C00680BF3 /* 2.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC180D5846450062EA14 /* 2.png */; };
+		30BCCF740DA67B1C00680BF3 /* 3.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC190D5846450062EA14 /* 3.png */; };
+		30BCCF750DA67B1C00680BF3 /* 4.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC1A0D5846450062EA14 /* 4.png */; };
+		30BCCF760DA67B1C00680BF3 /* 5.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC1B0D5846450062EA14 /* 5.png */; };
+		30BCCF770DA67B1C00680BF3 /* 6.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC1C0D5846450062EA14 /* 6.png */; };
+		30BCCF780DA67B1C00680BF3 /* 7.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC1D0D5846450062EA14 /* 7.png */; };
+		30BCCF790DA67B1C00680BF3 /* 8.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC1E0D5846450062EA14 /* 8.png */; };
+		30BCCF7A0DA67B1C00680BF3 /* 9.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC1F0D5846450062EA14 /* 9.png */; };
+		30BCCF7B0DA67B1C00680BF3 /* _.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC200D5846450062EA14 /* _.png */; };
+		30BCCF7C0DA67B1C00680BF3 /* A.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC210D5846450062EA14 /* A.png */; };
+		30BCCF7D0DA67B1C00680BF3 /* B.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC220D5846450062EA14 /* B.png */; };
+		30BCCF7E0DA67B1C00680BF3 /* Background.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC230D5846450062EA14 /* Background.png */; };
+		30BCCF7F0DA67B1C00680BF3 /* Blank.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC240D5846450062EA14 /* Blank.png */; };
+		30BCCF800DA67B1C00680BF3 /* C.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC250D5846450062EA14 /* C.png */; };
+		30BCCF810DA67B1C00680BF3 /* D.png in Copy Silver Files */ = {isa = PBXBuildFile; fileRef = 3020DC260D5846450062EA14 /* D.png */; };
+		30BCCF820DA67B2700680BF3 /* Background.png in Copy Red Files */ = {isa = PBXBuildFile; fileRef = 3020DC000D5846450062EA14 /* Background.png */; };
+		30BCCF9C0DA67CA600680BF3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 30BCCF9B0DA67CA600680BF3 /* icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30BCCF510DA67A9100680BF3 /* Copy Blue Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = WozBox;
+			dstSubfolderSpec = 1;
+			files = (
+				30BCCF520DA67AA600680BF3 /* #.png in Copy Blue Files */,
+				30BCCF530DA67AA600680BF3 /* 0.png in Copy Blue Files */,
+				30BCCF540DA67AA600680BF3 /* 1.png in Copy Blue Files */,
+				30BCCF550DA67AA600680BF3 /* 2.png in Copy Blue Files */,
+				30BCCF560DA67AA600680BF3 /* 3.png in Copy Blue Files */,
+				30BCCF570DA67AA600680BF3 /* 4.png in Copy Blue Files */,
+				30BCCF580DA67AA600680BF3 /* 5.png in Copy Blue Files */,
+				30BCCF590DA67AA600680BF3 /* 6.png in Copy Blue Files */,
+				30BCCF5A0DA67AA600680BF3 /* 7.png in Copy Blue Files */,
+				30BCCF5B0DA67AA600680BF3 /* 8.png in Copy Blue Files */,
+				30BCCF5C0DA67AA600680BF3 /* 9.png in Copy Blue Files */,
+				30BCCF5D0DA67AA600680BF3 /* _.png in Copy Blue Files */,
+				30BCCF5E0DA67AA600680BF3 /* Background.png in Copy Blue Files */,
+				30BCCF5F0DA67AA600680BF3 /* Blank.png in Copy Blue Files */,
+				30BCCF600DA67AA600680BF3 /* Clear.png in Copy Blue Files */,
+				30BCCF610DA67AA600680BF3 /* Send.png in Copy Blue Files */,
+			);
+			name = "Copy Blue Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30BCCF920DA67B6100680BF3 /* Copy Green Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = GreenBox;
+			dstSubfolderSpec = 1;
+			files = (
+				30BCCF630DA67ADC00680BF3 /* Background.png in Copy Green Files */,
+				30BCCF640DA67ADC00680BF3 /* CoinCollect.png in Copy Green Files */,
+				30BCCF650DA67ADC00680BF3 /* CoinCollect_Down.png in Copy Green Files */,
+				30BCCF660DA67ADC00680BF3 /* CoinReturn.png in Copy Green Files */,
+				30BCCF670DA67ADC00680BF3 /* CoinReturn_Down.png in Copy Green Files */,
+				30BCCF680DA67ADC00680BF3 /* MF8.png in Copy Green Files */,
+				30BCCF690DA67ADC00680BF3 /* MF8_Down.png in Copy Green Files */,
+				30BCCF6A0DA67ADC00680BF3 /* RingBack.png in Copy Green Files */,
+				30BCCF6B0DA67ADC00680BF3 /* RingBack_Down.png in Copy Green Files */,
+				30BCCF6C0DA67ADC00680BF3 /* Wink.png in Copy Green Files */,
+				30BCCF6D0DA67ADC00680BF3 /* Wink_Down.png in Copy Green Files */,
+			);
+			name = "Copy Green Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30BCCF930DA67B6100680BF3 /* Copy Red Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = RedBox;
+			dstSubfolderSpec = 1;
+			files = (
+				30BCCF820DA67B2700680BF3 /* Background.png in Copy Red Files */,
+			);
+			name = "Copy Red Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30BCCF940DA67B6100680BF3 /* Copy Silver Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = SilverBox;
+			dstSubfolderSpec = 1;
+			files = (
+				30BCCF700DA67B1C00680BF3 /* #.png in Copy Silver Files */,
+				30BCCF710DA67B1C00680BF3 /* 0.png in Copy Silver Files */,
+				30BCCF720DA67B1C00680BF3 /* 1.png in Copy Silver Files */,
+				30BCCF730DA67B1C00680BF3 /* 2.png in Copy Silver Files */,
+				30BCCF740DA67B1C00680BF3 /* 3.png in Copy Silver Files */,
+				30BCCF750DA67B1C00680BF3 /* 4.png in Copy Silver Files */,
+				30BCCF760DA67B1C00680BF3 /* 5.png in Copy Silver Files */,
+				30BCCF770DA67B1C00680BF3 /* 6.png in Copy Silver Files */,
+				30BCCF780DA67B1C00680BF3 /* 7.png in Copy Silver Files */,
+				30BCCF790DA67B1C00680BF3 /* 8.png in Copy Silver Files */,
+				30BCCF7A0DA67B1C00680BF3 /* 9.png in Copy Silver Files */,
+				30BCCF7B0DA67B1C00680BF3 /* _.png in Copy Silver Files */,
+				30BCCF7C0DA67B1C00680BF3 /* A.png in Copy Silver Files */,
+				30BCCF7D0DA67B1C00680BF3 /* B.png in Copy Silver Files */,
+				30BCCF7E0DA67B1C00680BF3 /* Background.png in Copy Silver Files */,
+				30BCCF7F0DA67B1C00680BF3 /* Blank.png in Copy Silver Files */,
+				30BCCF800DA67B1C00680BF3 /* C.png in Copy Silver Files */,
+				30BCCF810DA67B1C00680BF3 /* D.png in Copy Silver Files */,
+			);
+			name = "Copy Silver Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3020DBF70D583B190062EA14 /* Boxes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Boxes.plist; sourceTree = "<group>"; };
@@ -65,8 +220,18 @@
 		303C708B0D55362E000B36A9 /* ButtonBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonBarView.h; sourceTree = "<group>"; };
 		304016EA0D4AFFD60013A607 /* TonePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonePlayer.h; sourceTree = "<group>"; };
 		304016EB0D4AFFD60013A607 /* TonePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonePlayer.m; sourceTree = "<group>"; };
-		304017BF0D4B0A750013A607 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		304017BF0D4B0A750013A607 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
 		3054502A0D521269009FC636 /* WebFontCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebFontCache.h; sourceTree = "<group>"; };
+		30BCCE900DA6772B00680BF3 /* iPhreakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhreakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30BCCE920DA6772B00680BF3 /* iPhreakApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPhreakApp-Info.plist"; sourceTree = "<group>"; };
+		30BCCEA10DA677A800680BF3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		30BCCEA30DA677AF00680BF3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = ../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		30BCCEA50DA677BE00680BF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		30BCCED20DA6789900680BF3 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = ../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		30BCCEEB0DA678FE00680BF3 /* LayerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LayerKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks/LayerKit.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		30BCCEFA0DA6796D00680BF3 /* Celestial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Celestial.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks/Celestial.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		30BCCEFD0DA6799B00680BF3 /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks/GraphicsServices.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		30BCCF9B0DA67CA600680BF3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		30C9C9AA0D458A4F000A54B0 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 		30C9C9AB0D458A4F000A54B0 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Key.m; sourceTree = "<group>"; };
 		30C9C9AC0D458A5B000A54B0 /* KeyPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPad.h; sourceTree = "<group>"; };
@@ -87,11 +252,27 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D90F56B90C6719EF007AE76B /* iPhreakApp.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = iPhreakApp.m; sourceTree = "<group>"; };
 		D90F56BA0C6719EF007AE76B /* iPhreakApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iPhreakApp.h; sourceTree = "<group>"; };
-		D90F56E20C671CD1007AE76B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /Developer/SDKs/iPhone.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		D90F56E30C671CD1007AE76B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = /Developer/SDKs/iPhone.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = "<absolute>"; };
 		D92591D70C6B431100BBDBBC /* Makefile */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		D9C1849B0C6B467300A7383F /* iPhreak_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = iPhreak_Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30BCCE8E0DA6772B00680BF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30BCCEA20DA677A800680BF3 /* Foundation.framework in Frameworks */,
+				30BCCEA40DA677AF00680BF3 /* CoreGraphics.framework in Frameworks */,
+				30BCCEA60DA677BE00680BF3 /* UIKit.framework in Frameworks */,
+				30BCCED30DA6789900680BF3 /* CoreAudio.framework in Frameworks */,
+				30BCCEEC0DA678FE00680BF3 /* LayerKit.framework in Frameworks */,
+				30BCCEEF0DA6793F00680BF3 /* AudioToolbox.framework in Frameworks */,
+				30BCCEFB0DA6796D00680BF3 /* Celestial.framework in Frameworks */,
+				30BCCEFE0DA6799B00680BF3 /* GraphicsServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		080E96DDFE201D6D7F000001 /* Classes */ = {
@@ -112,6 +293,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				30BCCE900DA6772B00680BF3 /* iPhreakApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,6 +308,11 @@
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				30C9C9B20D458B5C000A54B0 /* notes */,
+				30BCCE920DA6772B00680BF3 /* iPhreakApp-Info.plist */,
+				30BCCEA10DA677A800680BF3 /* Foundation.framework */,
+				30BCCEA30DA677AF00680BF3 /* CoreGraphics.framework */,
+				30BCCEA50DA677BE00680BF3 /* UIKit.framework */,
+				30BCCED20DA6789900680BF3 /* CoreAudio.framework */,
 			);
 			name = iPhreak;
 			sourceTree = "<group>";
@@ -146,6 +333,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				30BCCF9B0DA67CA600680BF3 /* icon.png */,
 				3020DBFE0D5846450062EA14 /* GUI */,
 				30C9C9EA0D45B9C1000A54B0 /* Default.png */,
 				3020DBF70D583B190062EA14 /* Boxes.plist */,
@@ -157,9 +345,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30BCCEFD0DA6799B00680BF3 /* GraphicsServices.framework */,
+				30BCCEFA0DA6796D00680BF3 /* Celestial.framework */,
+				30BCCEEB0DA678FE00680BF3 /* LayerKit.framework */,
 				304017BF0D4B0A750013A607 /* AudioToolbox.framework */,
-				D90F56E20C671CD1007AE76B /* Foundation.framework */,
-				D90F56E30C671CD1007AE76B /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -178,10 +367,10 @@
 		3020DBFF0D5846450062EA14 /* RedBox */ = {
 			isa = PBXGroup;
 			children = (
-				3020DC000D5846450062EA14 /* Background.png */,
 				3020DC010D5846450062EA14 /* CAN */,
 				3020DC0A0D5846450062EA14 /* GB */,
 				3020DC0B0D5846450062EA14 /* US */,
+				3020DC000D5846450062EA14 /* Background.png */,
 			);
 			path = RedBox;
 			sourceTree = "<group>";
@@ -307,6 +496,30 @@
 		};
 /* End PBXLegacyTarget section */
 
+/* Begin PBXNativeTarget section */
+		30BCCE8F0DA6772B00680BF3 /* iPhreakApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30BCCE950DA6772B00680BF3 /* Build configuration list for PBXNativeTarget "iPhreakApp" */;
+			buildPhases = (
+				30BCCE8C0DA6772B00680BF3 /* Resources */,
+				30BCCF930DA67B6100680BF3 /* Copy Red Files */,
+				30BCCF940DA67B6100680BF3 /* Copy Silver Files */,
+				30BCCF510DA67A9100680BF3 /* Copy Blue Files */,
+				30BCCF920DA67B6100680BF3 /* Copy Green Files */,
+				30BCCE8D0DA6772B00680BF3 /* Sources */,
+				30BCCE8E0DA6772B00680BF3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPhreakApp;
+			productName = iPhreakApp;
+			productReference = 30BCCE900DA6772B00680BF3 /* iPhreakApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
@@ -318,11 +531,116 @@
 			projectRoot = "";
 			targets = (
 				D92591D10C6B42C700BBDBBC /* iPhreak */,
+				30BCCE8F0DA6772B00680BF3 /* iPhreakApp */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		30BCCE8C0DA6772B00680BF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30BCCF040DA679D300680BF3 /* Default.png in Resources */,
+				30BCCF050DA679DB00680BF3 /* Boxes.plist in Resources */,
+				30BCCF9C0DA67CA600680BF3 /* icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30BCCE8D0DA6772B00680BF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30BCCE980DA6778F00680BF3 /* TonePlayer.m in Sources */,
+				30BCCE990DA6778F00680BF3 /* Key.m in Sources */,
+				30BCCE9A0DA6778F00680BF3 /* KeyPad.m in Sources */,
+				30BCCE9B0DA6778F00680BF3 /* iPhreakApp.m in Sources */,
+				30BCCE9C0DA6778F00680BF3 /* ButtonBarView.m in Sources */,
+				30BCCE9D0DA6778F00680BF3 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
 /* Begin XCBuildConfiguration section */
+		30BCCE930DA6772B00680BF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				CC = "";
+				COPY_PHASE_STRIP = NO;
+				CXX = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)/../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SDKROOT)/../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = "iPhreakApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LD = "";
+				OTHER_CFLAGS = (
+					"-I/Developer/SDKs/iPhoneOS.sdk/Versions/iPhoneOS2.0.sdk/include",
+					"-I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include",
+					"-I/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/gcc/arm-apple-darwin9/4.0.1/include",
+					"-F/System/library/Frameworks",
+					"-F/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/library/Frameworks",
+					"-F/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/library/PrivateFrameworks",
+					"-DMAC_OS_X_VERSION_MAX_ALLOWED=1050",
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = iPhreakApp;
+				SDKROOT = iphoneos2.0;
+			};
+			name = Debug;
+		};
+		30BCCE940DA6772B00680BF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)/../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SDKROOT)/../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "iPhreakApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = iPhreakApp;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -378,6 +696,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		30BCCE950DA6772B00680BF3 /* Build configuration list for PBXNativeTarget "iPhreakApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30BCCE930DA6772B00680BF3 /* Debug */,
+				30BCCE940DA6772B00680BF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPhreak" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

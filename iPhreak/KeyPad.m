@@ -112,8 +112,8 @@
 	[resultDisplay setScrollingEnabled: NO];
 	//[resultText setTextSize: 64];
 	
-	[resultDisplay setHTML:@"<span style=\"color:#124564;text-align:right;display:block;font-family:helvetica;font-size:64px;font-weight:normal;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:-2px;\">blah</span>"];
-	[resultDisplay setNeedsDisplay];
+	//[resultDisplay setHTML:@"<span style=\"color:#124564;text-align:right;display:block;font-family:helvetica;font-size:64px;font-weight:normal;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:-2px;\">blah</span>"];
+	//[resultDisplay setNeedsDisplay];
 	//[view addSubview: resultDisplay];
 
 }	
