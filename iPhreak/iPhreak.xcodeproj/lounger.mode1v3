@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -278,8 +276,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
-									<integer>25</integer>
+									<integer>8</integer>
+									<integer>2</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -313,12 +312,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TonePlayer.m</string>
+								<string>KeyPad.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TonePlayer.m</string>
+										<string>KeyPad.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>305DDAAC0E91D474002D922A</string>
+										<string>305DDAE90E91D90F002D922A</string>
 										<key>history</key>
 										<array>
 											<string>3040170C0D4B02680013A607</string>
@@ -339,9 +340,10 @@
 											<string>309796440E9055DD00F574AA</string>
 											<string>309796450E9055DD00F574AA</string>
 											<string>305DDA950E91D3E8002D922A</string>
-											<string>305DDA960E91D3E8002D922A</string>
 											<string>305DDA970E91D3E8002D922A</string>
-											<string>305DDA980E91D3E8002D922A</string>
+											<string>305DDAB90E91D546002D922A</string>
+											<string>305DDADE0E91D84C002D922A</string>
+											<string>305DDADF0E91D84C002D922A</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -363,6 +365,8 @@
 											<string>305DDA9B0E91D3E8002D922A</string>
 											<string>305DDA9C0E91D3E8002D922A</string>
 											<string>305DDA9D0E91D3E8002D922A</string>
+											<string>305DDABB0E91D546002D922A</string>
+											<string>305DDAE00E91D84C002D922A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -586,7 +590,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>iPhreakApp.h</string>
+								<string>iPhreakApp.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -795,8 +799,6 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -823,6 +825,8 @@
 							<string>400pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -887,6 +891,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

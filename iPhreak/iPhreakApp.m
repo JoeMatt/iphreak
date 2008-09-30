@@ -44,13 +44,13 @@ extern NSString *kUIButtonBarButtonType;
 	[self readSettings];
 
 	/* Setup Oscilators */
-	player = [[TonePlayer alloc] init];
-	
-	tones = [[NSArray arrayWithObjects:
-			  [player addTone: [Tone toneWithFrequency: 0]],
-			  [player addTone: [Tone toneWithFrequency: 0]],
-			  nil] retain];
-	[player play];
+//	player = [[TonePlayer alloc] init];
+//	
+//	tones = [[NSArray arrayWithObjects:
+//			  [player addTone: [Tone toneWithFrequency: 0]],
+//			  [player addTone: [Tone toneWithFrequency: 0]],
+//			  nil] retain];
+//	[player play];
 	
 	/* Create Boxes */
 	KeyPad * wozBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"WozBox"] parent:self];
@@ -81,12 +81,12 @@ extern NSString *kUIButtonBarButtonType;
 	prefsTable    = [ self createPrefPane ];
 	/* end */
 	
-	[lcd setTextSize:18.0];
+	lcd.font = [UIFont systemFontOfSize:18.0];
 	
-	[tabBarView addView:[silverBox getView]];
-	[tabBarView addView:[redBox getView]];
-	[tabBarView addView:[greenBox getView]];
-	[tabBarView addView:prefsTable];
+	[tabBarView addSubview:[silverBox getView]];
+	[tabBarView addSubview:[redBox getView]];
+	[tabBarView addSubview:[greenBox getView]];
+	[tabBarView addSubview:prefsTable];
 
 	[mainView addSubview:lcd]; 
 	[mainView addSubview: tabBarView];
@@ -95,12 +95,13 @@ extern NSString *kUIButtonBarButtonType;
 	[tabBarView release];
 	
 	// Allert sheet displayed at centre of screen.
-	NSArray *buttons = [NSArray arrayWithObjects:@"I swear to be good", @"Whatever, I'll do what I want", nil];
-	warningSheet = [[UIAlertView alloc] initWithTitle:@"Warning" buttons:buttons defaultButtonIndex:1 delegate:self context:self];
-	[warningSheet setDelegate:self];
-	[warningSheet setRunsModal: true];
-	[warningSheet setBodyText:@"Be careful. Don't use for anything illegal. Avoid playing anything other than Silver Box tones into a phone receiver!"];
-	[warningSheet popupAlertAnimated:YES];
+	warningSheet = [[UIAlertView alloc] initWithTitle:@"Warning"
+											  message:@"Be careful. Don't use for anything illegal. Avoid playing anything other than Silver Box tones into a phone receiver!" 
+											 delegate:self 
+									cancelButtonTitle:@"Whatever, I'll do what I want" 
+									otherButtonTitles:@"I swear to be good",nil];
+	[warningSheet show];				
+	
 }
 
 - (void)alertSheet:(UIAlertView*)sheet buttonClicked:(int)button
@@ -279,7 +280,7 @@ extern NSString *kUIButtonBarButtonType;
 			break;
     }
 	
-    [ cell setShowSelection: NO ];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cells[row][group] = cell;
     return cells[row][group];
 }
@@ -299,9 +300,9 @@ extern NSString *kUIButtonBarButtonType;
 	
     langControl = [[UISegmentedControl alloc]
 					initWithFrame:CGRectMake(170.0f, 5.0f, 120.0f, 55.0f) ];
-    [ langControl insertSegment:0 withTitle:@"US" animated: NO ];
-    [ langControl insertSegment:1 withTitle:@"CAN" animated: NO ];
-    [ langControl insertSegment:2 withTitle:@"GB" animated: NO ];
+    [ langControl insertSegmentWithTitle:@"US" atIndex:0 animated: NO ];
+    [ langControl insertSegmentWithTitle:@"CAN" atIndex:1 animated: NO ];
+    [ langControl insertSegmentWithTitle:@"GB" atIndex:2 animated: NO ];
    // [ langControl selectSegment: preferences.frameSkip ];
 	
     NSString *verString = [ [NSString alloc] initWithCString: VERSION ]; 

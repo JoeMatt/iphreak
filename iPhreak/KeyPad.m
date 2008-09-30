@@ -35,7 +35,7 @@
 -(void)makeKeys: (id) sender
 {	
 }
-@class UIPushButton;
+#define UIPushButton UIButton
 -(void)makeView: (id) sender
 { 
 	
@@ -77,16 +77,15 @@
 												yPos:yPos
 											  keyPad:self];
 		
-		pushButton = [[UIPushButton alloc] init];
-		[pushButton setFrame: CGRectMake(100.0, 130.0, 100.0, 50.0)];
-		[pushButton setDrawsShadow: YES];
-		[pushButton setEnabled:YES];  //may not be needed	
-		[pushButton setStretchBackground:YES];
-		[pushButton setOrigin: CGPointMake([keys[x] xPos] , [keys[x] yPos])];
-		
+		pushButton = [UIButton buttonWithType:UIButtonTypeCustom];
+		[pushButton setFrame: CGRectMake([keys[x] xPos] , [keys[x] yPos], 100.0, 50.0)];
+			[pushButton setEnabled:YES];  //may not be needed	
+
+		pushButton.contentMode = UIViewContentModeScaleAspectFill;
+			
 		[pushButton setImage:[keys[x] defaultImage] forState:0];  //up state
 		[pushButton setImage:[keys[x] pressedImage] forState:1]; //down state	
-		[pushButton addTarget:keys[x] action: @selector(buttonPressed) forEvent: 1<<6];
+		[pushButton addTarget:keys[x] action: @selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
 
 		[view addSubview: pushButton];
 		
@@ -109,7 +108,7 @@
 	// result text field up there at the top -- like a normal calculator
 	UITextView* resultDisplay = [[UITextView alloc] initWithFrame: resultRect];
 	[resultDisplay setEditable: NO];
-	[resultDisplay setScrollingEnabled: NO];
+	[resultDisplay setScrollEnabled: NO];
 	//[resultText setTextSize: 64];
 	
 	//[resultDisplay setHTML:@"<span style=\"color:#124564;text-align:right;display:block;font-family:helvetica;font-size:64px;font-weight:normal;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:-2px;\">blah</span>"];
