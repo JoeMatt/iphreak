@@ -10,7 +10,7 @@
 
 @class Key;
 
-@interface KeyPad : NSObject {
+@interface KeyPad : UIView {
 	UIImage * background;
 	unsigned numRows, 
 			 numCols, 

@@ -18,6 +18,12 @@
  
  */
 
+#ifdef DEBUG
+#define DLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#else
+#define DLog(...) 
+#endif
+
 #import <UIKit/UIKit.h>
 
 @class TonePlayer;

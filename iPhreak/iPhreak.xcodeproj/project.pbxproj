@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		305DDAA40E91D42F002D922A /* Celestial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305DDAA30E91D42F002D922A /* Celestial.framework */; };
+		305DDB900E91DAF5002D922A /* KeyPadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305DDB8F0E91DAF5002D922A /* KeyPadController.m */; };
 		309796370E904B6F00F574AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309796360E904B6F00F574AA /* UIKit.framework */; };
 		3097963A0E904B9A00F574AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309796390E904B9A00F574AA /* Foundation.framework */; };
 		30BCCE980DA6778F00680BF3 /* TonePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 304016EB0D4AFFD60013A607 /* TonePlayer.m */; };
 		30BCCE990DA6778F00680BF3 /* Key.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9AB0D458A4F000A54B0 /* Key.m */; };
-		30BCCE9A0DA6778F00680BF3 /* KeyPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9AD0D458A5B000A54B0 /* KeyPad.m */; };
+		30BCCE9A0DA6778F00680BF3 /* KeyPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9AD0D458A5B000A54B0 /* KeyPadView.m */; };
 		30BCCE9B0DA6778F00680BF3 /* iPhreakApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F56B90C6719EF007AE76B /* iPhreakApp.m */; };
 		30BCCE9D0DA6778F00680BF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		30BCCEEF0DA6793F00680BF3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304017BF0D4B0A750013A607 /* AudioToolbox.framework */; };
@@ -216,6 +217,8 @@
 		304017BF0D4B0A750013A607 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		3054502A0D521269009FC636 /* WebFontCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebFontCache.h; sourceTree = "<group>"; };
 		305DDAA30E91D42F002D922A /* Celestial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Celestial.framework; path = System/Library/PrivateFrameworks/Celestial.framework; sourceTree = SDKROOT; };
+		305DDB8E0E91DAF5002D922A /* KeyPadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyPadController.h; path = Classes/KeyPads/KeyPadController.h; sourceTree = "<group>"; };
+		305DDB8F0E91DAF5002D922A /* KeyPadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyPadController.m; path = Classes/KeyPads/KeyPadController.m; sourceTree = "<group>"; };
 		309796360E904B6F00F574AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		309796390E904B9A00F574AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		30BCCE900DA6772B00680BF3 /* iPhreakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhreakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,8 +226,8 @@
 		30BCCF9B0DA67CA600680BF3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		30C9C9AA0D458A4F000A54B0 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 		30C9C9AB0D458A4F000A54B0 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Key.m; sourceTree = "<group>"; };
-		30C9C9AC0D458A5B000A54B0 /* KeyPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPad.h; sourceTree = "<group>"; };
-		30C9C9AD0D458A5B000A54B0 /* KeyPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPad.m; sourceTree = "<group>"; };
+		30C9C9AC0D458A5B000A54B0 /* KeyPadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPadView.h; sourceTree = "<group>"; };
+		30C9C9AD0D458A5B000A54B0 /* KeyPadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPadView.m; sourceTree = "<group>"; };
 		30C9C9B20D458B5C000A54B0 /* notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes; sourceTree = "<group>"; };
 		30C9C9EA0D45B9C1000A54B0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		30D48D190D59012000A47AA0 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
@@ -267,8 +270,10 @@
 				304016EB0D4AFFD60013A607 /* TonePlayer.m */,
 				30C9C9AA0D458A4F000A54B0 /* Key.h */,
 				30C9C9AB0D458A4F000A54B0 /* Key.m */,
-				30C9C9AC0D458A5B000A54B0 /* KeyPad.h */,
-				30C9C9AD0D458A5B000A54B0 /* KeyPad.m */,
+				30C9C9AC0D458A5B000A54B0 /* KeyPadView.h */,
+				30C9C9AD0D458A5B000A54B0 /* KeyPadView.m */,
+				305DDB8E0E91DAF5002D922A /* KeyPadController.h */,
+				305DDB8F0E91DAF5002D922A /* KeyPadController.m */,
 				D90F56BA0C6719EF007AE76B /* iPhreakApp.h */,
 				D90F56B90C6719EF007AE76B /* iPhreakApp.m */,
 			);
@@ -294,9 +299,6 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				30C9C9B20D458B5C000A54B0 /* notes */,
 				30BCCE920DA6772B00680BF3 /* iPhreakApp-Info.plist */,
-				309796360E904B6F00F574AA /* UIKit.framework */,
-				309796390E904B9A00F574AA /* Foundation.framework */,
-				305DDAA30E91D42F002D922A /* Celestial.framework */,
 			);
 			name = iPhreak;
 			sourceTree = "<group>";
@@ -327,6 +329,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				309796360E904B6F00F574AA /* UIKit.framework */,
+				309796390E904B9A00F574AA /* Foundation.framework */,
+				305DDAA30E91D42F002D922A /* Celestial.framework */,
 				304017BF0D4B0A750013A607 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
@@ -518,9 +523,10 @@
 			files = (
 				30BCCE980DA6778F00680BF3 /* TonePlayer.m in Sources */,
 				30BCCE990DA6778F00680BF3 /* Key.m in Sources */,
-				30BCCE9A0DA6778F00680BF3 /* KeyPad.m in Sources */,
+				30BCCE9A0DA6778F00680BF3 /* KeyPadView.m in Sources */,
 				30BCCE9B0DA6778F00680BF3 /* iPhreakApp.m in Sources */,
 				30BCCE9D0DA6778F00680BF3 /* main.m in Sources */,
+				305DDB900E91DAF5002D922A /* KeyPadController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

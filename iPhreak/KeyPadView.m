@@ -6,14 +6,12 @@
 //  Copyright 2008 Joe Mattiello. All rights reserved.
 //
 
-#import "KeyPad.h"
+#import "KeyPadView.h"
 #import "Key.h" 
 #import "iPhreakApp.h"
 #import "TonePlayer.h" 
 
 @implementation KeyPad
-
--(id)initWithDictionary:(NSDictionary*) aDict parent:(id)sender;
 {
 	[super init];
 	
@@ -21,7 +19,7 @@
 	myName = [myDictionary valueForKey:@"Name"];
 	parent = sender;
 	activeTimer = nil;
-	
+
 	background = [UIImage imageNamed:[NSString stringWithFormat:@"%@/%@",myName,[myDictionary valueForKey:@"Background"]]];
 	//view = [[UIImageView alloc] initWithImage: background];
 	view = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,320,460)];
@@ -89,7 +87,7 @@
 
 		[view addSubview: pushButton];
 		
-		NSLog(@"Added key: osc1:%i osc2:%i Xpos:%i Ypos:%i Image:%@ Pressed:%@",osc1, osc2, [keys[x] xPos], [keys[x] yPos], [NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"DefaultImage"]], [NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"PressedImage"]]);
+		DLog(@"Added key: osc1:%i osc2:%i Xpos:%i Ypos:%i Image:%@ Pressed:%@",osc1, osc2, [keys[x] xPos], [keys[x] yPos], [NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"DefaultImage"]], [NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"PressedImage"]]);
 		x++;
 	}
 	numKeys = x+1;	
