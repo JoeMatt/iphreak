@@ -4,7 +4,9 @@
  BSD License
  */
 #import "TonePlayer.h"
-#import <Celestial/AVSystemController.h>
+//#import <Celestial/AVSystemController.h>
+
+@class AVSystemController;
 
 extern CFRunLoopRef CFRunLoopGetCurrent(void);
 static const int TONESamplesPerBuffer = 44100 / 10;	// 1/10 second

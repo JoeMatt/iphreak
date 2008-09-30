@@ -1,18 +1,6 @@
 #import "iPhreakApp.h"
 #import "KeyPad.h"
 #import "TonePlayer.h" 
-#import <UIKit/UIView-Geometry.h>
-#import <UIKit/UIView-Gestures.h>
-#import <UIKit/UIView-Animation.h>
-#import <UIKit/UISliderControl.h>
-#import <UIKit/UIPickerView.h>
-#import <UIKit/UIPickerTable.h>
-#import <UIKit/UIPickerTableCell.h>
-#import <UIKit/UIPreferencesTable.h>
-#import <UIKit/UIPreferencesTableCell.h>
-#import <UIKit/UIPreferencesTextTableCell.h>
-#import <UIKit/UISegmentedControl.h>
-#import <UIKit/UISwitchControl.h>
 
 #import "ButtonBarView.h"
 
@@ -40,20 +28,18 @@ extern NSString *kUIButtonBarButtonType;
 
 @implementation iPhreakApp
  
-- (void)applicationDidFinishLaunching:(GSEventRef)event;
+- (void)applicationDidFinishLaunching:(UIApplication *)application
 {  
     
 	/* Setup Window */
 	// init main window for the application to be the whole screen.
-	//struct CGRect frame = [UIHardware fullScreenApplicationContentRect];
-	//frame.origin.x = frame.origin.y = 0.0f;
-	//mainWindow = [[UIWindow alloc] initWithContentRect: frame];
-	[super setStatusBarMode:3 duration:1];
+	CGRect fullscreen = [[UIScreen mainScreen] applicationFrame];
 	
-	mainWindow = [[UIWindow alloc] initWithContentRect:[UIHardware fullScreenApplicationContentRect]];
-    [mainWindow setContentView:[[[UIView alloc] initWithFrame:[mainWindow bounds]] autorelease]];
-	mainView = [[[UIView alloc] initWithFrame:[mainWindow bounds]] autorelease];
-	[mainWindow setContentView:mainView];
+	[super setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
+	
+	mainWindow = [[UIWindow alloc] initWithFrame:fullscreen];
+
+	mainView = [[UIView alloc] initWithFrame: fullscreen];
 				
 	[self readSettings];
 
@@ -75,7 +61,8 @@ extern NSString *kUIButtonBarButtonType;
 	/* Setup Views */
 	//UIView * preferencesView = [self setupPreferences];
 	UITextView * lcd = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 130)];	
-	buttonBarView = [[ButtonBarView alloc] initWithFrame:CGRectMake(0,0,320,460) andView:[wozBox getView]];
+	tabBarController = [[UITabBarController alloc] init];
+	tabBarView = tabBarController.view;
 	
 				/* TEMP */
 	//float red[4] = {1, 0, 0, 1};
@@ -86,8 +73,8 @@ extern NSString *kUIButtonBarButtonType;
 	//float black[4] = {0, 0, 0, 1}; 
 
    // [preferencesView setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), white)];
-	[[redBox getView] setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), darkred)];
-	[[greenBox getView] setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), darkgreen)];
+	[[redBox getView] setBackgroundColor:[UIColor redColor]];
+	[[greenBox getView] setBackgroundColor:[UIColor greenColor]];
 	/* END TEMP */
 	
 	/* Prefs */
@@ -96,29 +83,27 @@ extern NSString *kUIButtonBarButtonType;
 	
 	[lcd setTextSize:18.0];
 	
-	[buttonBarView addView:[silverBox getView]];
-	[buttonBarView addView:[redBox getView]];
-	[buttonBarView addView:[greenBox getView]];
-	[buttonBarView addView:prefsTable];
+	[tabBarView addView:[silverBox getView]];
+	[tabBarView addView:[redBox getView]];
+	[tabBarView addView:[greenBox getView]];
+	[tabBarView addView:prefsTable];
 
 	[mainView addSubview:lcd]; 
-	[mainView addSubview:buttonBarView];
+	[mainView addSubview: tabBarView];
 	
-	[mainWindow orderFront: self];
-	[mainWindow makeKey: self];
-	[mainWindow _setHidden: NO];
-	[buttonBarView release];
+	[mainWindow makeKeyAndVisible];
+	[tabBarView release];
 	
 	// Allert sheet displayed at centre of screen.
 	NSArray *buttons = [NSArray arrayWithObjects:@"I swear to be good", @"Whatever, I'll do what I want", nil];
-	warningSheet = [[UIAlertSheet alloc] initWithTitle:@"Warning" buttons:buttons defaultButtonIndex:1 delegate:self context:self];
+	warningSheet = [[UIAlertView alloc] initWithTitle:@"Warning" buttons:buttons defaultButtonIndex:1 delegate:self context:self];
 	[warningSheet setDelegate:self];
 	[warningSheet setRunsModal: true];
 	[warningSheet setBodyText:@"Be careful. Don't use for anything illegal. Avoid playing anything other than Silver Box tones into a phone receiver!"];
 	[warningSheet popupAlertAnimated:YES];
 }
 
-- (void)alertSheet:(UIAlertSheet*)sheet buttonClicked:(int)button
+- (void)alertSheet:(UIAlertView*)sheet buttonClicked:(int)button
 {
 	if ( button == 1 )
 		;
@@ -178,6 +163,7 @@ extern NSString *kUIButtonBarButtonType;
             break;
     */}
 }
+@class UIPreferencesTextTableCell;
 
 - (UIPreferencesTableCell *)preferencesTable:(UIPreferencesTable *)aTable 
 								cellForGroup:(int)group 
@@ -287,7 +273,7 @@ extern NSString *kUIButtonBarButtonType;
 					[ cell  addSubview:greenBoxControl ]; 
 					break;
 				case (4):
-					[ cell setValue:versionString ];
+					[ cell setText:versionString ];
 					break;
 			}
 			break;
@@ -352,9 +338,9 @@ return YES;}
 /* <ButtonBar> */
 
 - (void)reloadButtonBar {
-    [ buttonBarView removeFromSuperview ];
-    [ buttonBarView release ];
-    buttonBarView = [ self createButtonBar ];
+    [ tabBarView removeFromSuperview ];
+    [ tabBarView release ];
+    tabBarView = [ self createButtonBar ];
 }
 
 - (ButtonBarView*)createButtonBar

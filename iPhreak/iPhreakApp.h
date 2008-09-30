@@ -18,9 +18,6 @@
  
  */
 
-#import <Foundation/Foundation.h>
-#import <GraphicsServices/GraphicsServices.h>
-#import <LayerKit/LayerKit.h>
 #import <UIKit/UIKit.h>
 
 @class TonePlayer;
@@ -29,7 +26,7 @@
 @class UIPreferencesTable;
 @class UIPreferencesTableCell;
 @class UISegmentedControl;
-@class UISwitchControl;
+#define UISwitchControl UISwitch
 
 @interface iPhreakApp : UIApplication {
 	UIWindow		* mainWindow;
@@ -38,9 +35,10 @@
 	TonePlayer		* player;
 	NSArray			* tones;
 	
-	ButtonBarView	* buttonBarView;
+	UITabBarController	* tabBarController;
+	UITabBar			* tabBarView;
 	
-	UIAlertSheet	* warningSheet;
+	UIAlertView	* warningSheet;
 	
 	NSMutableArray	* boxes;
 	
@@ -65,7 +63,7 @@
 -(void)readSettings;
 -(Tone*)getToneByIndex:(int) index;
 -(TonePlayer*)player;
-- (void)alertSheet:(UIAlertSheet*)sheet buttonClicked:(int)button;
+- (void)alertSheet:(UIAlertView*)sheet buttonClicked:(int)button;
 
 /** Button Bar **/
 - (void)reloadButtonBar;

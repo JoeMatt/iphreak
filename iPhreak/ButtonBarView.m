@@ -16,7 +16,7 @@
 	
 	barStatus = 1;
 
-	rect = [UIHardware fullScreenApplicationContentRect];
+	rect = frame;
 	_offScreenRect = frame;
 	_onScreenRect = frame;
 	_onScreenRect.origin.x = 0.0f;
@@ -55,9 +55,9 @@
 	}
 
 
-- (UIButtonBar *)createButtonBar {
-    UIButtonBar *buttonBar;
-    buttonBar = [ [ UIButtonBar alloc ] 
+- (UITabBar *)createButtonBar {
+    UITabBar *buttonBar;
+    buttonBar = [ [ UITabBar alloc ] 
        initInView: self
        withFrame: CGRectMake(0.0f, 0.0f, 320.0f, 49.0f)
        withItemList: [ self buttonBarItems ] ];

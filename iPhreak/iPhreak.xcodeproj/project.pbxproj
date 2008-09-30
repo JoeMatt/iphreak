@@ -3,24 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 44;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		305DDAA40E91D42F002D922A /* Celestial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305DDAA30E91D42F002D922A /* Celestial.framework */; };
+		309796370E904B6F00F574AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309796360E904B6F00F574AA /* UIKit.framework */; };
+		3097963A0E904B9A00F574AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309796390E904B9A00F574AA /* Foundation.framework */; };
 		30BCCE980DA6778F00680BF3 /* TonePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 304016EB0D4AFFD60013A607 /* TonePlayer.m */; };
 		30BCCE990DA6778F00680BF3 /* Key.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9AB0D458A4F000A54B0 /* Key.m */; };
 		30BCCE9A0DA6778F00680BF3 /* KeyPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C9C9AD0D458A5B000A54B0 /* KeyPad.m */; };
 		30BCCE9B0DA6778F00680BF3 /* iPhreakApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D90F56B90C6719EF007AE76B /* iPhreakApp.m */; };
-		30BCCE9C0DA6778F00680BF3 /* ButtonBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 303C708A0D55362E000B36A9 /* ButtonBarView.m */; };
 		30BCCE9D0DA6778F00680BF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		30BCCEA20DA677A800680BF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEA10DA677A800680BF3 /* Foundation.framework */; };
-		30BCCEA40DA677AF00680BF3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEA30DA677AF00680BF3 /* CoreGraphics.framework */; };
-		30BCCEA60DA677BE00680BF3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEA50DA677BE00680BF3 /* UIKit.framework */; };
-		30BCCED30DA6789900680BF3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCED20DA6789900680BF3 /* CoreAudio.framework */; };
-		30BCCEEC0DA678FE00680BF3 /* LayerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEEB0DA678FE00680BF3 /* LayerKit.framework */; };
 		30BCCEEF0DA6793F00680BF3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 304017BF0D4B0A750013A607 /* AudioToolbox.framework */; };
-		30BCCEFB0DA6796D00680BF3 /* Celestial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEFA0DA6796D00680BF3 /* Celestial.framework */; };
-		30BCCEFE0DA6799B00680BF3 /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BCCEFD0DA6799B00680BF3 /* GraphicsServices.framework */; };
 		30BCCF040DA679D300680BF3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C9C9EA0D45B9C1000A54B0 /* Default.png */; };
 		30BCCF050DA679DB00680BF3 /* Boxes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3020DBF70D583B190062EA14 /* Boxes.plist */; };
 		30BCCF520DA67AA600680BF3 /* #.png in Copy Blue Files */ = {isa = PBXBuildFile; fileRef = 3020DC280D5846450062EA14 /* #.png */; };
@@ -216,21 +211,15 @@
 		3020DC360D5846450062EA14 /* Clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clear.png; sourceTree = "<group>"; };
 		3020DC370D5846450062EA14 /* Send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Send.png; sourceTree = "<group>"; };
 		3022137B0D552FC200918800 /* AudioQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioQueue.h; sourceTree = "<group>"; };
-		303C708A0D55362E000B36A9 /* ButtonBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonBarView.m; sourceTree = "<group>"; };
-		303C708B0D55362E000B36A9 /* ButtonBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonBarView.h; sourceTree = "<group>"; };
 		304016EA0D4AFFD60013A607 /* TonePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonePlayer.h; sourceTree = "<group>"; };
 		304016EB0D4AFFD60013A607 /* TonePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonePlayer.m; sourceTree = "<group>"; };
-		304017BF0D4B0A750013A607 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
+		304017BF0D4B0A750013A607 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		3054502A0D521269009FC636 /* WebFontCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebFontCache.h; sourceTree = "<group>"; };
+		305DDAA30E91D42F002D922A /* Celestial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Celestial.framework; path = System/Library/PrivateFrameworks/Celestial.framework; sourceTree = SDKROOT; };
+		309796360E904B6F00F574AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		309796390E904B9A00F574AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		30BCCE900DA6772B00680BF3 /* iPhreakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhreakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BCCE920DA6772B00680BF3 /* iPhreakApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPhreakApp-Info.plist"; sourceTree = "<group>"; };
-		30BCCEA10DA677A800680BF3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		30BCCEA30DA677AF00680BF3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = ../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		30BCCEA50DA677BE00680BF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = ../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		30BCCED20DA6789900680BF3 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = ../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		30BCCEEB0DA678FE00680BF3 /* LayerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LayerKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks/LayerKit.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
-		30BCCEFA0DA6796D00680BF3 /* Celestial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Celestial.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks/Celestial.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
-		30BCCEFD0DA6799B00680BF3 /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks/GraphicsServices.framework; sourceTree = SYSTEM_DEVELOPER_DIR; };
 		30BCCF9B0DA67CA600680BF3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		30C9C9AA0D458A4F000A54B0 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
 		30C9C9AB0D458A4F000A54B0 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Key.m; sourceTree = "<group>"; };
@@ -261,14 +250,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BCCEA20DA677A800680BF3 /* Foundation.framework in Frameworks */,
-				30BCCEA40DA677AF00680BF3 /* CoreGraphics.framework in Frameworks */,
-				30BCCEA60DA677BE00680BF3 /* UIKit.framework in Frameworks */,
-				30BCCED30DA6789900680BF3 /* CoreAudio.framework in Frameworks */,
-				30BCCEEC0DA678FE00680BF3 /* LayerKit.framework in Frameworks */,
 				30BCCEEF0DA6793F00680BF3 /* AudioToolbox.framework in Frameworks */,
-				30BCCEFB0DA6796D00680BF3 /* Celestial.framework in Frameworks */,
-				30BCCEFE0DA6799B00680BF3 /* GraphicsServices.framework in Frameworks */,
+				309796370E904B6F00F574AA /* UIKit.framework in Frameworks */,
+				3097963A0E904B9A00F574AA /* Foundation.framework in Frameworks */,
+				305DDAA40E91D42F002D922A /* Celestial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,10 +294,9 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				30C9C9B20D458B5C000A54B0 /* notes */,
 				30BCCE920DA6772B00680BF3 /* iPhreakApp-Info.plist */,
-				30BCCEA10DA677A800680BF3 /* Foundation.framework */,
-				30BCCEA30DA677AF00680BF3 /* CoreGraphics.framework */,
-				30BCCEA50DA677BE00680BF3 /* UIKit.framework */,
-				30BCCED20DA6789900680BF3 /* CoreAudio.framework */,
+				309796360E904B6F00F574AA /* UIKit.framework */,
+				309796390E904B9A00F574AA /* Foundation.framework */,
+				305DDAA30E91D42F002D922A /* Celestial.framework */,
 			);
 			name = iPhreak;
 			sourceTree = "<group>";
@@ -320,8 +304,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				303C708B0D55362E000B36A9 /* ButtonBarView.h */,
-				303C708A0D55362E000B36A9 /* ButtonBarView.m */,
 				3022137B0D552FC200918800 /* AudioQueue.h */,
 				3054502A0D521269009FC636 /* WebFontCache.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
@@ -345,9 +327,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				30BCCEFD0DA6799B00680BF3 /* GraphicsServices.framework */,
-				30BCCEFA0DA6796D00680BF3 /* Celestial.framework */,
-				30BCCEEB0DA678FE00680BF3 /* LayerKit.framework */,
 				304017BF0D4B0A750013A607 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
@@ -480,26 +459,10 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		D92591D10C6B42C700BBDBBC /* iPhreak */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = D92591D40C6B42CE00BBDBBC /* Build configuration list for PBXLegacyTarget "iPhreak" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/bin/make;
-			dependencies = (
-			);
-			name = iPhreak;
-			passBuildSettingsInEnvironment = 1;
-			productName = iPhreak;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
-		30BCCE8F0DA6772B00680BF3 /* iPhreakApp */ = {
+		30BCCE8F0DA6772B00680BF3 /* iPhreak */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 30BCCE950DA6772B00680BF3 /* Build configuration list for PBXNativeTarget "iPhreakApp" */;
+			buildConfigurationList = 30BCCE950DA6772B00680BF3 /* Build configuration list for PBXNativeTarget "iPhreak" */;
 			buildPhases = (
 				30BCCE8C0DA6772B00680BF3 /* Resources */,
 				30BCCF930DA67B6100680BF3 /* Copy Red Files */,
@@ -513,7 +476,7 @@
 			);
 			dependencies = (
 			);
-			name = iPhreakApp;
+			name = iPhreak;
 			productName = iPhreakApp;
 			productReference = 30BCCE900DA6772B00680BF3 /* iPhreakApp.app */;
 			productType = "com.apple.product-type.application";
@@ -524,14 +487,13 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPhreak" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.0";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* iPhreak */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D92591D10C6B42C700BBDBBC /* iPhreak */,
-				30BCCE8F0DA6772B00680BF3 /* iPhreakApp */,
+				30BCCE8F0DA6772B00680BF3 /* iPhreak */,
 			);
 		};
 /* End PBXProject section */
@@ -558,7 +520,6 @@
 				30BCCE990DA6778F00680BF3 /* Key.m in Sources */,
 				30BCCE9A0DA6778F00680BF3 /* KeyPad.m in Sources */,
 				30BCCE9B0DA6778F00680BF3 /* iPhreakApp.m in Sources */,
-				30BCCE9C0DA6778F00680BF3 /* ButtonBarView.m in Sources */,
 				30BCCE9D0DA6778F00680BF3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,34 +533,17 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
-				CC = "";
 				COPY_PHASE_STRIP = NO;
-				CXX = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
 				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)/../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SDKROOT)/../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "iPhreakApp-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD = "";
-				OTHER_CFLAGS = (
-					"-I/Developer/SDKs/iPhoneOS.sdk/Versions/iPhoneOS2.0.sdk/include",
-					"-I/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/usr/include",
-					"-I/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/gcc/arm-apple-darwin9/4.0.1/include",
-					"-F/System/library/Frameworks",
-					"-F/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/library/Frameworks",
-					"-F/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/library/PrivateFrameworks",
-					"-DMAC_OS_X_VERSION_MAX_ALLOWED=1050",
-				);
 				PREBINDING = NO;
 				PRODUCT_NAME = iPhreakApp;
 				SDKROOT = iphoneos2.0;
@@ -619,6 +563,7 @@
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SDKROOT)/../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SDKROOT)/../../Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks\"";
@@ -644,14 +589,13 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = arm;
-				CC = "/usr/local/iphonedev/bin/arm-apple-darwin-cc";
-				CXX = "/usr/local/iphonedev/bin/arm-apple-darwin-cc";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD = "/usr/local/iphonedev/bin/arm-apple-darwin-cc";
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/iPhone.sdk;
+				SDKROOT = iphoneos2.0;
 				SHARED_PRECOMPS_DIR = "/Library/Caches/com.apple.Xcode.iPhone.$(UID)/SharedPrecompiledHeaders";
 			};
 			name = Debug;
@@ -671,32 +615,10 @@
 			};
 			name = Release;
 		};
-		D92591D50C6B42CE00BBDBBC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = iPhreak;
-			};
-			name = Debug;
-		};
-		D92591D60C6B42CE00BBDBBC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				PRODUCT_NAME = iPhreak;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		30BCCE950DA6772B00680BF3 /* Build configuration list for PBXNativeTarget "iPhreakApp" */ = {
+		30BCCE950DA6772B00680BF3 /* Build configuration list for PBXNativeTarget "iPhreak" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				30BCCE930DA6772B00680BF3 /* Debug */,
@@ -710,15 +632,6 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D92591D40C6B42CE00BBDBBC /* Build configuration list for PBXLegacyTarget "iPhreak" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D92591D50C6B42CE00BBDBBC /* Debug */,
-				D92591D60C6B42CE00BBDBBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

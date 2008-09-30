@@ -22,7 +22,7 @@
 	parent = sender;
 	activeTimer = nil;
 	
-	background = [UIImage applicationImageNamed:[NSString stringWithFormat:@"%@/%@",myName,[myDictionary valueForKey:@"Background"]]];
+	background = [UIImage imageNamed:[NSString stringWithFormat:@"%@/%@",myName,[myDictionary valueForKey:@"Background"]]];
 	//view = [[UIImageView alloc] initWithImage: background];
 	view = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,320,460)];
 	[view setImage:background];
@@ -35,7 +35,7 @@
 -(void)makeKeys: (id) sender
 {	
 }
- 
+@class UIPushButton;
 -(void)makeView: (id) sender
 { 
 	
@@ -71,8 +71,8 @@
 		/* code that uses the returned key */
 		keys[x]= [[Key alloc] initWithFirstFrequency:osc1 
 									 secondFrequency:osc2 
-									defaultImage:[UIImage applicationImageNamed:[NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"DefaultImage"]]] 
-										pressedImage:[UIImage applicationImageNamed:[NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"PressedImage"]]] 
+									defaultImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"DefaultImage"]]] 
+										pressedImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"PressedImage"]]] 
 												xPos:xPos 
 												yPos:yPos
 											  keyPad:self];
@@ -86,7 +86,7 @@
 		
 		[pushButton setImage:[keys[x] defaultImage] forState:0];  //up state
 		[pushButton setImage:[keys[x] pressedImage] forState:1]; //down state	
-		[pushButton addTarget:keys[x] action: @selector(buttonPressed) forEvents: 1<<6];
+		[pushButton addTarget:keys[x] action: @selector(buttonPressed) forEvent: 1<<6];
 
 		[view addSubview: pushButton];
 		
@@ -99,7 +99,7 @@
 	
 	// The result text is just 89 pixels at the top.
 	// hardcoded for now.
-	struct CGRect frame = [UIHardware fullScreenApplicationContentRect];
+	struct CGRect frame = [[UIScreen mainScreen] applicationFrame];
 	frame.origin.x = frame.origin.y = 0.0f;
 	
 	struct CGRect resultRect = frame;

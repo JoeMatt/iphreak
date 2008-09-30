@@ -4,7 +4,8 @@
  BSD License 
  */
 #import <Foundation/Foundation.h>
-#import "AudioQueue.h"	// NOTE: this file comes from Leopard's AudioToolbox framework - I cannot distribute it!  Get Leopard :)
+//#import "AudioQueue.h"	// NOTE: this file comes from Leopard's AudioToolbox framework - I cannot distribute it!  Get Leopard :)
+#import <AudioToolbox/AudioQueue.h>
 
 @interface Tone : NSObject {
 	float frequency;
