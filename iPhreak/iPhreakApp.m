@@ -1,32 +1,11 @@
 #import "iPhreakApp.h"
-#import "KeyPad.h"
+#import "KeyPadView.h"
 #import "TonePlayer.h" 
+#import "KeyPadController.h"
 
 #import "ButtonBarView.h"
 
-/*
-#import <TelephonyUI/TPLCDSubImageView.h>
-#import <TelephonyUI/TPLCDTextView.h>
-#import <TelephonyUI/TPLCDTextViewScrollingView.h>
-#import <TelephonyUI/TPLCDView.h>
-#import <TelephonyUI/TelephonyUI.h>
- */
-/*
-extern NSString *kUIButtonBarButtonAction;
-extern NSString *kUIButtonBarButtonInfo;
-extern NSString *kUIButtonBarButtonInfoOffset;
-extern NSString *kUIButtonBarButtonSelectedInfo;
-extern NSString *kUIButtonBarButtonStyle;
-extern NSString *kUIButtonBarButtonTag;
-extern NSString *kUIButtonBarButtonTarget;
-extern NSString *kUIButtonBarButtonTitle;
-extern NSString *kUIButtonBarButtonTitleVerticalHeight;
-extern NSString *kUIButtonBarButtonTitleWidth;
-extern NSString *kUIButtonBarButtonType;
-*/
-#define VERSION "1.0"
-
-@implementation iPhreakApp
+@implementation iPhreakAppDelegate
  
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {  
@@ -35,11 +14,13 @@ extern NSString *kUIButtonBarButtonType;
 	// init main window for the application to be the whole screen.
 	CGRect fullscreen = [[UIScreen mainScreen] applicationFrame];
 	
-	[super setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
 	
 	mainWindow = [[UIWindow alloc] initWithFrame:fullscreen];
 
 	mainView = [[UIView alloc] initWithFrame: fullscreen];
+	[mainWindow addSubview:mainView];
+	[mainView release];
 				
 	[self readSettings];
 
@@ -53,40 +34,31 @@ extern NSString *kUIButtonBarButtonType;
 //	[player play];
 	
 	/* Create Boxes */
-	KeyPad * wozBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"WozBox"] parent:self];
-	KeyPad * silverBox = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
-	KeyPad * redBox    = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"RedBox"] parent:self];
-	KeyPad * greenBox  = [[KeyPad alloc] initWithDictionary:[boxData objectForKey:@"GreenBox"] parent:self];
-
+	KeyPadController * wozBox    = [[KeyPadController alloc] initWithDictionary:[boxData objectForKey:@"WozBox"] parent:self];
+	KeyPadController * silverBox = [[KeyPadController alloc] initWithDictionary:[boxData objectForKey:@"SilverBox"] parent:self];
+	KeyPadController * redBox    = [[KeyPadController alloc] initWithDictionary:[boxData objectForKey:@"RedBox"] parent:self];
+	KeyPadController * greenBox  = [[KeyPadController alloc] initWithDictionary:[boxData objectForKey:@"GreenBox"] parent:self];
+	
 	/* Setup Views */
 	//UIView * preferencesView = [self setupPreferences];
 	UITextView * lcd = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 130)];	
-	tabBarController = [[UITabBarController alloc] init];
-	tabBarView = tabBarController.view;
-	
-				/* TEMP */
-	//float red[4] = {1, 0, 0, 1};
-	float darkred[4] = {.3, .08, .08, 1};
-	//float green[4] = {0, 1, 0, 1};
-	float darkgreen[4] = {.08, .3, .08, 1};
-	//float white[4] = {1, 1, 1, 1};
-	//float black[4] = {0, 0, 0, 1}; 
 
-   // [preferencesView setBackgroundColor: CGColorCreate(CGColorSpaceCreateDeviceRGB(), white)];
-	[[redBox getView] setBackgroundColor:[UIColor redColor]];
-	[[greenBox getView] setBackgroundColor:[UIColor greenColor]];
 	/* END TEMP */
 	
 	/* Prefs */
-	prefsTable    = [ self createPrefPane ];
+	prefsController    = [[PreferencesController alloc] init];
+	/* end */
+	
+	/* Tabbar */
+	tabBarController = [[UITabBarController alloc] init];
+	UIView * tabBarView = tabBarController.view;
+	
+	boxes = [[NSArray alloc] initWithObjects:wozBox, silverBox, redBox, greenBox, prefsController];
+	[tabBarController setViewControllers:boxes animated:NO];
 	/* end */
 	
 	lcd.font = [UIFont systemFontOfSize:18.0];
 	
-	[tabBarView addSubview:[silverBox getView]];
-	[tabBarView addSubview:[redBox getView]];
-	[tabBarView addSubview:[greenBox getView]];
-	[tabBarView addSubview:prefsTable];
 
 	[mainView addSubview:lcd]; 
 	[mainView addSubview: tabBarView];
@@ -104,14 +76,16 @@ extern NSString *kUIButtonBarButtonType;
 	
 }
 
-- (void)alertSheet:(UIAlertView*)sheet buttonClicked:(int)button
-{
-	if ( button == 1 )
-		;
-	else if ( button == 2 )
-	{ [self terminateWithSuccess]; }
-	
-	[sheet dismiss];
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{	
+	switch(buttonIndex)
+	{
+		case 0:
+			[[UIApplication sharedApplication] terminateWithSuccess];
+			break;
+		case 1:
+			break;
+	}
 }
 
 -(Tone*)getToneByIndex:(int) index
@@ -144,209 +118,18 @@ extern NSString *kUIButtonBarButtonType;
 	}
 }
 
-/*** <Preferences> ****/
-- (int)numberOfGroupsInPreferencesTable:(UIPreferencesTable *)aTable {
-	return 2;//3;
-}
-
-- (int)preferencesTable:(UIPreferencesTable *)aTable 
-    numberOfRowsInGroup:(int)group 
-{
-    switch (group) { 
-        case(0):
-            return 3;
-            break;
-        case(1):
-            return 5;
-            break;
-   /*     case(2):
-            return 5;
-            break;
-    */}
-}
-@class UIPreferencesTextTableCell;
-
-- (UIPreferencesTableCell *)preferencesTable:(UIPreferencesTable *)aTable 
-								cellForGroup:(int)group 
-{
-	if (groupcell[group] != NULL)
-		return groupcell[group];
-	
-	groupcell[group] =  [[ UIPreferencesTextTableCell alloc ] 
-						 initWithFrame: CGRectMake(0, 0, 320, 20)];
-	if (group == 0) {
-		[ groupcell[group] setTitle: @"General Options" ];
-    }
-	else if (group == 1)
-		[ groupcell[group] setTitle: @"Box Enable" ];
-/*	else if (group == 2)
-		[ groupcell[group] setTitle: @"Stuff" ];
-*/	
-	return groupcell[group];
-} 
-
-- (float)preferencesTable:(UIPreferencesTable *)aTable 
-			 heightForRow:(int)row 
-				  inGroup:(int)group 
-	   withProposedHeight:(float)proposed 
-{
-    if (row == -1) {
-        return 40;
-    }
-	
-	if (group == 0 && row == 2)
-		return 55;
-	
-    return proposed;
-}
-
-- (BOOL)preferencesTable:(UIPreferencesTable *)aTable 
-			isLabelGroup:(int)group 
-{
-    return NO; 
-}
-
-- (UIPreferencesTableCell *)preferencesTable:(UIPreferencesTable *)aTable 
-								  cellForRow:(int)row 
-									 inGroup:(int)group 
-{
-    if (cells[row][group] != NULL)
-        return cells[row][group];
-	
-    UIPreferencesTableCell *cell;
-	
-    cell = [ [ UIPreferencesTableCell alloc ] init ];
-	
-    switch (group) {
-        case (0):
-			switch (row) {
-				case (0):
-					[ cell setTitle:@"Startup Warning" ];
-					startupWarningControl =  [[ UISwitchControl alloc ] 
-										initWithFrame:CGRectMake(170.0f, 5.0f, 120.0f, 30.0f)];
-					//[ startupWarningControl setValue: preferences.autoSave ];
-					[ cell  addSubview:startupWarningControl ]; 
-					break;
-				case (1):
-					[ cell setTitle:@"Tone Queueing" ];
-					toneQueueingControl =  [[ UISwitchControl alloc ] 
-										initWithFrame:CGRectMake(170.0f, 5.0f, 120.0f, 30.0f)];
-					//[ toneQueueingControl setValue: preferences.autoSave ];
-					[ cell  addSubview:toneQueueingControl ]; 
-					break;
-				case (2):
-					[ cell setTitle:@"Red Box locale" ];
-					//	[ langControl selectSegment: preferences.frameSkip ];
-					[ cell addSubview:langControl ];
-					break;	
-					
-			}
-			break;
-			
-		case (1):
-			switch (row) {
-					case (0):
-					[ cell setTitle:@"Blue Box" ];
-					blueBoxControl =  [[ UISwitchControl alloc ] 
-										initWithFrame:CGRectMake(170.0f, 5.0f, 120.0f, 30.0f)];
-					//[ blueBoxControl setValue: preferences.autoSave ];
-					[ cell  addSubview:blueBoxControl ]; 
-					break;
-				case (1):
-					[ cell setTitle:@"Silver Box" ];
-					silverBoxControl =  [[ UISwitchControl alloc ] 
-										initWithFrame:CGRectMake(170.0f, 5.0f, 120.0f, 30.0f)];
-					//[ :silverBoxControl setValue: preferences.autoSave ];
-					[ cell  addSubview:silverBoxControl ]; 
-					break;
-				case (2):
-					[ cell setTitle:@"Red Box" ];
-					redBoxControl =  [[ UISwitchControl alloc ] 
-										initWithFrame:CGRectMake(170.0f, 5.0f, 120.0f, 30.0f)];
-					//[ redBoxControl setValue: preferences.autoSave ];
-					[ cell  addSubview:redBoxControl ]; 
-					break;
-				case (3):
-					[ cell setTitle:@"Green Box" ];
-					greenBoxControl =  [[ UISwitchControl alloc ] 
-										initWithFrame:CGRectMake(170.0f, 5.0f, 120.0f, 30.0f)];
-					//[ greenBoxControl setValue: preferences.autoSave ];
-					[ cell  addSubview:greenBoxControl ]; 
-					break;
-				case (4):
-					[ cell setText:versionString ];
-					break;
-			}
-			break;
-    }
-	
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    cells[row][group] = cell;
-    return cells[row][group];
-}
-
-- (UIPreferencesTable *)createPrefPane {
-	
-	UIPreferencesTable *pref = [[UIPreferencesTable alloc] initWithFrame:
-								CGRectMake(0, 0, 360, 420)];
-	
-    [ pref setDataSource: self ];
-    [ pref setDelegate: self ];
-	
-    int i, j;
-    for(i=0;i<10;i++)
-        for(j=0;j<10;j++) 
-            cells[i][j] = NULL;
-	
-    langControl = [[UISegmentedControl alloc]
-					initWithFrame:CGRectMake(170.0f, 5.0f, 120.0f, 55.0f) ];
-    [ langControl insertSegmentWithTitle:@"US" atIndex:0 animated: NO ];
-    [ langControl insertSegmentWithTitle:@"CAN" atIndex:1 animated: NO ];
-    [ langControl insertSegmentWithTitle:@"GB" atIndex:2 animated: NO ];
-   // [ langControl selectSegment: preferences.frameSkip ];
-	
-    NSString *verString = [ [NSString alloc] initWithCString: VERSION ]; 
-    versionString = [ [ NSString alloc ] initWithFormat: @"Version %@", verString ];
-    [ verString release ];
-	
-    int row;
-    for(row=0;row<6;row++) {
-        UIPreferencesTableCell *cell;
-        if (row > 0) {
-            cell = [[UIPreferencesTextTableCell alloc] init];
-        } else {
-            cell = [[UIPreferencesTableCell alloc] init];
-            [ cell setEnabled: YES ];
-        }
-		
-		cells[row][2] = cell;
-	
-        }
-    
-	
-    [ pref reloadData ];
-    return pref;
-}
-
-- (BOOL)savePreferences
-{ 
-	//TODO
-return YES;}
-
-
-/*** </Preferences> ****/
 
 /* <ButtonBar> */
 
 - (void)reloadButtonBar {
-    [ tabBarView removeFromSuperview ];
-    [ tabBarView release ];
-    tabBarView = [ self createButtonBar ];
+    [tabBarController.view removeFromSuperview ];
+	tabBarController.view = [ self createButtonBar ];
 }
 
 - (ButtonBarView*)createButtonBar
 {
 	//TODO
+	return nil;
 }
 
 /* </ButtonBar> */

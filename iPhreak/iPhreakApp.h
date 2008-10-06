@@ -25,6 +25,7 @@
 #endif
 
 #import <UIKit/UIKit.h>
+#import "PreferencesController.h"
 
 @class TonePlayer;
 @class Tone;
@@ -34,7 +35,7 @@
 @class UISegmentedControl;
 #define UISwitchControl UISwitch
 
-@interface iPhreakApp : UIApplication {
+@interface iPhreakAppDelegate : NSObject <UIApplicationDelegate, UIActionSheetDelegate> {
 	UIWindow		* mainWindow;
 	UIView			* mainView;
 	NSDictionary	* boxData;
@@ -42,58 +43,21 @@
 	NSArray			* tones;
 	
 	UITabBarController	* tabBarController;
-	UITabBar			* tabBarView;
 	
+	PreferencesController *prefsController;
+
 	UIAlertView	* warningSheet;
 	
 	NSMutableArray	* boxes;
 	
-	/* Preferences */
-	UIPreferencesTable *prefsTable;
-	
-	UIPreferencesTableCell *cells[10][10];
-	UIPreferencesTableCell *groupcell[10];
-	UISegmentedControl *langControl;
-	UISwitchControl *toneQueueingControl;
-	UISwitchControl *startupWarningControl;
-	UISwitchControl *blueBoxControl;
-	UISwitchControl *redBoxControl;
-	UISwitchControl *silverBoxControl;
-	UISwitchControl *greenBoxControl;
-	NSString *versionString;
-	/* End Preferences */
-
 }
 
 -(UIWindow*)getMainWindow;
 -(void)readSettings;
 -(Tone*)getToneByIndex:(int) index;
 -(TonePlayer*)player;
-- (void)alertSheet:(UIAlertView*)sheet buttonClicked:(int)button;
 
 /** Button Bar **/
 - (void)reloadButtonBar;
 - (ButtonBarView*)createButtonBar;
-
-/* <Preferences> */
-- (BOOL)					savePreferences;
-- (UIPreferencesTable *)	createPrefPane;
-- (int)						numberOfGroupsInPreferencesTable: (UIPreferencesTable *)aTable;
-- (int)						preferencesTable:(UIPreferencesTable *)aTable 
-						numberOfRowsInGroup:(int)group;
-
-- (UIPreferencesTableCell *)preferencesTable:(UIPreferencesTable *)aTable 
-								cellForGroup:(int)group;
-
-- (UIPreferencesTableCell *)preferencesTable:(UIPreferencesTable *)aTable 
-								  cellForRow:(int)row 
-									 inGroup:(int)group;
-
-- (float)					preferencesTable:(UIPreferencesTable *)aTable 
-				  heightForRow:(int)row 
-					   inGroup:(int)group 
-			withProposedHeight:(float)proposed;
-
-- (BOOL)preferencesTable:(UIPreferencesTable *)aTable isLabelGroup:(int)group;
-/* </Preferences> */
 @end

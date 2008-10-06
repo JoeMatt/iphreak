@@ -7,7 +7,7 @@
 //
 
 #import "Key.h"
-#import "KeyPad.h"
+#import "KeyPadView.h"
 
 @implementation Key
 

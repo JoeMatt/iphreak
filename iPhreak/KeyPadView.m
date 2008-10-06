@@ -12,29 +12,29 @@
 #import "TonePlayer.h" 
 
 @implementation KeyPad
-{
-	[super init];
-	
-	myDictionary = [[NSDictionary alloc] initWithDictionary:aDict]; 
-	myName = [myDictionary valueForKey:@"Name"];
-	parent = sender;
-	activeTimer = nil;
 
-	background = [UIImage imageNamed:[NSString stringWithFormat:@"%@/%@",myName,[myDictionary valueForKey:@"Background"]]];
-	//view = [[UIImageView alloc] initWithImage: background];
-	view = [[UIImageView alloc] initWithFrame:CGRectMake(0,0,320,460)];
-	[view setImage:background];
-	
-	[self makeView: self];
-	
+-(id)initWithDictionary:(NSDictionary*) aDict parent:(id)sender
+{
+	if(self = [super init])
+	{	
+		myDictionary = [[NSDictionary alloc] initWithDictionary:aDict]; 
+		myName = [myDictionary valueForKey:@"Name"];
+		parent = sender;
+		activeTimer = nil;
+		
+		
+		UIImage * background = [UIImage imageNamed:[NSString stringWithFormat:@"%@/%@",myName,[myDictionary valueForKey:@"Background"]]];
+			
+		self.frame = CGRectMake(0,0,320,460);
+		self.image = background;
+		
+		[self addButtons];	
+	}
 	return self; 
 }
 
--(void)makeKeys: (id) sender
-{	
-}
 #define UIPushButton UIButton
--(void)makeView: (id) sender
+-(void)addButtons
 { 
 	
 	/*For each Key in Keys, make key
@@ -85,14 +85,12 @@
 		[pushButton setImage:[keys[x] pressedImage] forState:1]; //down state	
 		[pushButton addTarget:keys[x] action: @selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
 
-		[view addSubview: pushButton];
+		[self addSubview: pushButton];
 		
 		DLog(@"Added key: osc1:%i osc2:%i Xpos:%i Ypos:%i Image:%@ Pressed:%@",osc1, osc2, [keys[x] xPos], [keys[x] yPos], [NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"DefaultImage"]], [NSString stringWithFormat:@"%@/%@",myName,[key valueForKey:@"PressedImage"]]);
 		x++;
 	}
 	numKeys = x+1;	
-	
-	
 	
 	// The result text is just 89 pixels at the top.
 	// hardcoded for now.
@@ -112,20 +110,19 @@
 	//[resultDisplay setHTML:@"<span style=\"color:#124564;text-align:right;display:block;font-family:helvetica;font-size:64px;font-weight:normal;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:-2px;\">blah</span>"];
 	//[resultDisplay setNeedsDisplay];
 	//[view addSubview: resultDisplay];
-
 }	
 
 -(void)keyPressed: (Key*)aKey;
 { 
 	Key * key = aKey;
-	iPhreakApp * app = (iPhreakApp*) parent;
+	iPhreakAppDelegate * appDelegate = (iPhreakAppDelegate*) parent;
 	
-	NSLog(@"Button %i %i pressed",[key freq1], [key freq2] );
+	DLog(@"Button %i %i pressed",[key freq1], [key freq2] );
 	NSTimeInterval interval = .16;
 	
-	[[app getToneByIndex:0] setFrequency:[key freq1]];
-	[[app getToneByIndex:1] setFrequency:[key freq2]];
-//	[[app player] play];
+	[[appDelegate getToneByIndex:0] setFrequency:[key freq1]];
+	[[appDelegate getToneByIndex:1] setFrequency:[key freq2]];
+//	[[appDelegate player] play];
 
 	if( activeTimer != nil && [activeTimer isValid] == YES )
 	{
@@ -140,13 +137,9 @@
 
 -(void)resetTones:(NSTimer*)theTimer
 {
-	iPhreakApp * app = (iPhreakApp*) parent;
+	iPhreakAppDelegate * app = (iPhreakAppDelegate*) parent;
 	[[app getToneByIndex:0] setFrequency:0];
 	[[app getToneByIndex:1] setFrequency:0];
 }
 
--(UIView*)getView
-{
-	return view;
-}
 @end

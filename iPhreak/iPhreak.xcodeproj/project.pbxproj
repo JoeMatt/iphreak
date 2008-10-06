@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		305DDAA40E91D42F002D922A /* Celestial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305DDAA30E91D42F002D922A /* Celestial.framework */; };
 		305DDB900E91DAF5002D922A /* KeyPadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305DDB8F0E91DAF5002D922A /* KeyPadController.m */; };
+		305DDC4C0E9981AA002D922A /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 305DDC4B0E9981AA002D922A /* PreferencesController.m */; };
 		309796370E904B6F00F574AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309796360E904B6F00F574AA /* UIKit.framework */; };
 		3097963A0E904B9A00F574AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309796390E904B9A00F574AA /* Foundation.framework */; };
 		30BCCE980DA6778F00680BF3 /* TonePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 304016EB0D4AFFD60013A607 /* TonePlayer.m */; };
@@ -219,9 +220,11 @@
 		305DDAA30E91D42F002D922A /* Celestial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Celestial.framework; path = System/Library/PrivateFrameworks/Celestial.framework; sourceTree = SDKROOT; };
 		305DDB8E0E91DAF5002D922A /* KeyPadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyPadController.h; path = Classes/KeyPads/KeyPadController.h; sourceTree = "<group>"; };
 		305DDB8F0E91DAF5002D922A /* KeyPadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyPadController.m; path = Classes/KeyPads/KeyPadController.m; sourceTree = "<group>"; };
+		305DDC4A0E9981AA002D922A /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreferencesController.h; path = Classes/PreferencesController.h; sourceTree = "<group>"; };
+		305DDC4B0E9981AA002D922A /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesController.m; path = Classes/PreferencesController.m; sourceTree = "<group>"; };
 		309796360E904B6F00F574AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		309796390E904B9A00F574AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		30BCCE900DA6772B00680BF3 /* iPhreakApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhreakApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30BCCE900DA6772B00680BF3 /* iPhreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BCCE920DA6772B00680BF3 /* iPhreakApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPhreakApp-Info.plist"; sourceTree = "<group>"; };
 		30BCCF9B0DA67CA600680BF3 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		30C9C9AA0D458A4F000A54B0 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
@@ -266,14 +269,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				305DDC4D0E9981B1002D922A /* Keys & Pads */,
 				304016EA0D4AFFD60013A607 /* TonePlayer.h */,
 				304016EB0D4AFFD60013A607 /* TonePlayer.m */,
-				30C9C9AA0D458A4F000A54B0 /* Key.h */,
-				30C9C9AB0D458A4F000A54B0 /* Key.m */,
-				30C9C9AC0D458A5B000A54B0 /* KeyPadView.h */,
-				30C9C9AD0D458A5B000A54B0 /* KeyPadView.m */,
-				305DDB8E0E91DAF5002D922A /* KeyPadController.h */,
-				305DDB8F0E91DAF5002D922A /* KeyPadController.m */,
+				305DDC4A0E9981AA002D922A /* PreferencesController.h */,
+				305DDC4B0E9981AA002D922A /* PreferencesController.m */,
 				D90F56BA0C6719EF007AE76B /* iPhreakApp.h */,
 				D90F56B90C6719EF007AE76B /* iPhreakApp.m */,
 			);
@@ -283,7 +283,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30BCCE900DA6772B00680BF3 /* iPhreakApp.app */,
+				30BCCE900DA6772B00680BF3 /* iPhreak.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -444,6 +444,19 @@
 			path = WozBox;
 			sourceTree = "<group>";
 		};
+		305DDC4D0E9981B1002D922A /* Keys & Pads */ = {
+			isa = PBXGroup;
+			children = (
+				30C9C9AA0D458A4F000A54B0 /* Key.h */,
+				30C9C9AB0D458A4F000A54B0 /* Key.m */,
+				30C9C9AC0D458A5B000A54B0 /* KeyPadView.h */,
+				30C9C9AD0D458A5B000A54B0 /* KeyPadView.m */,
+				305DDB8E0E91DAF5002D922A /* KeyPadController.h */,
+				305DDB8F0E91DAF5002D922A /* KeyPadController.m */,
+			);
+			name = "Keys & Pads";
+			sourceTree = "<group>";
+		};
 		30D48D180D59012000A47AA0 /* GreenBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,7 +496,7 @@
 			);
 			name = iPhreak;
 			productName = iPhreakApp;
-			productReference = 30BCCE900DA6772B00680BF3 /* iPhreakApp.app */;
+			productReference = 30BCCE900DA6772B00680BF3 /* iPhreak.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -527,6 +540,7 @@
 				30BCCE9B0DA6778F00680BF3 /* iPhreakApp.m in Sources */,
 				30BCCE9D0DA6778F00680BF3 /* main.m in Sources */,
 				305DDB900E91DAF5002D922A /* KeyPadController.m in Sources */,
+				305DDC4C0E9981AA002D922A /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +565,7 @@
 				INFOPLIST_FILE = "iPhreakApp-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PREBINDING = NO;
-				PRODUCT_NAME = iPhreakApp;
+				PRODUCT_NAME = iPhreak;
 				SDKROOT = iphoneos2.0;
 			};
 			name = Debug;
@@ -587,7 +601,7 @@
 					AppKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = iPhreakApp;
+				PRODUCT_NAME = iPhreak;
 				ZERO_LINK = NO;
 			};
 			name = Release;

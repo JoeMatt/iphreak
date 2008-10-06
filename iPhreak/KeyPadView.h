@@ -10,24 +10,21 @@
 
 @class Key;
 
-@interface KeyPad : UIView {
-	UIImage * background;
+@interface KeyPad : UIImageView {
 	unsigned numRows, 
 			 numCols, 
 			 numKeys;
 	
 	Key * keys[16];
 	NSDictionary* myDictionary;
-	UIImageView * view;
 	NSString * myName;
 	id parent;
 	NSTimer * activeTimer;
 }
 
+-(id)initWithDictionary:(NSDictionary*) aDict parent:(id) sender;
+
 -(void)keyPressed: (Key*)aKey;
 -(void)resetTones:(NSTimer*)theTimer;
--(void)makeKeys: (id) sender;
--(void)makeView: (id) sender;
--(UIView*)getView;
--(id)initWithDictionary:(NSDictionary*) aDict parent:(id) sender;
+-(void)addButtons;
 @end
